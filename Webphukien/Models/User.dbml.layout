@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Dangky">
+  <DataContextMoniker Name="/DangkyDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dec46e65-ff97-4ce4-a4b8-f52ffa6f0015" absoluteBounds="4.5, 1.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DangkyDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fee911bb-d7fe-4872-b322-0ffe6f5c224c" absoluteBounds="4.515, 2.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
