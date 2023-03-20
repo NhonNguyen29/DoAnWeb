@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Webphukien.Models.THUONGHIEU>
+<p class="lead">Thương Hiệu Sản Phẩm</p>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Thuonghieu","WebPhuKien", new {id=item.MaTH})" class="list-group-item">
+            @item.TenTH
+        </a>
+
+    }
+</div>
+

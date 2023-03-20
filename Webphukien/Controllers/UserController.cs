@@ -10,8 +10,10 @@ using Webphukien.Models;
 namespace Webphukien.Controllers
 {
     public class UserController : Controller
+       
     {
-        private DangkyDataContext db = new DangkyDataContext();
+
+        DangkyDataContext db = new DangkyDataContext();
         // GET: User
         public ActionResult Index()
         {
@@ -111,5 +113,7 @@ namespace Webphukien.Controllers
             return View();
         }
 
+        
+             
     }
 }

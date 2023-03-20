@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Webphukien.Models.SANPHAM>
+@{
+    ViewBag.Title = "SanPhamThuongHieu";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h3 style="text-align:center; color:red"> Sản Phẩm Thương Hiệu</h3>
+<div class="row">
+   @foreach (var spth in Model)
+    {
+
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <a href="@Url.Action("Chitietsanpham", "WebPhuKien", new { id = spth.MaSP})">
+                    <img alt="@spth.TenSP" src="~/images/@spth.Anhbia" width="200" />
+                    <div>
+                        <br />
+                        <h4 style="text-align:center">
+                            @spth.TenSP
+                        </h4>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">15 Nhận xét</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                    </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+
