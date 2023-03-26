@@ -19,7 +19,7 @@
 <h2>Chi Tiết Sản Phẩm</h2>
 <div>
     <div style="width:60%; float:left; border-left:dotted 1px; border-color:azure">
-        <img src="~/images/@Model.Anhbia" width="100%" />
+        <img src="~/images/@Model.Anhbia" width="100px" />
     </div>
     <div style="width:60%; float:left; padding:10px">
         <h4 style="font-weight:bold; color:red"> Tên Sản Phẩm: @Model.TenSP </h4>
@@ -28,7 +28,9 @@
     </div>
     <div>
         <div id="Datmua">
-            <a href="@Url.Action("ThemVaoGioHang", "MuaHang", new {id =@Model.MaSP})" class="list-group-item"> Đặt Mua </a>
+            @*<a href="@Url.Action("ThemVaoGioHang", "MuaHang", new {id =@Model.MaSP})" class="list-group-item"> Đặt Mua </a>*@
+            <a > Đặt Mua </a>
+
         </div>
     </div>
 </div>

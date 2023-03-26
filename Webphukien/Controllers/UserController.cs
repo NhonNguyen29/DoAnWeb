@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using Webphukien.Models;
 
 namespace Webphukien.Controllers
@@ -72,7 +73,7 @@ namespace Webphukien.Controllers
             {
                 kh.HoTen=hoten;
                 kh.Taikhoan=taikhoan;
-                kh.Matkhau=matkhau;
+                kh.Matkhau= matkhau;
                 kh.DienthoaiKH=dienthoai;
                 kh.Email=email;
                 kh.DiachiKH=diachi;
@@ -102,8 +103,9 @@ namespace Webphukien.Controllers
                     KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n=>n.Taikhoan == taikhoan && n.Matkhau== matkhau);
                     if(kh != null)
                     {
-                        ViewBag.Thongbao = "Đăng nhập thành công";
+                        //ViewBag.Thongbao = "Đăng nhập thành công";
                         Session["Taikhoan"] = kh;
+                    return RedirectToAction("Index", "WebPhuKien");
                     }
                     else
                     

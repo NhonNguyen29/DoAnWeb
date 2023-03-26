@@ -60,17 +60,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                @Html.ActionLink("ShopPhuKien", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })s
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Về chúng tôi</a>
-                    </li>
-                    <li>
-                        <a href="#">Hỗ trợ</a>
-                    </li>
+                    <li>@Html.ActionLink("Về chúng tôi", "About", "Home")</li>
+                    <li>@Html.ActionLink("Liên hệ", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Đăng Ký", "DangKy", "User")</li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -99,13 +97,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="~/images/capsacsamsung.jpg" width="100" alt="">
+                                    <img class="slide-image" src="~/images/banner1.jpg" width="100" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="~/images/oplungsamsung.jpg" width="100" alt="">
+                                    <img class="slide-image" src="~/images/banner2.jpg" width="100" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="~/images/tainghesamsung.jpg" width="100" alt="">
+                                    <img class="slide-image" src="~/images/banner3.jpg" width="100" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">

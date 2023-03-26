@@ -1,17 +1,345 @@
-﻿@model IEnumerable<Webphukien.Models.SANPHAM>
-  
-@{ 
+﻿@*@model IEnumerable<Webphukien.Models.SANPHAM>
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-
-<h2>
-    Chào bạn đến với Shop chúng tôi
-</h2>
-@*@foreach(var SANPHAM in Model)
-{
-    <li>
-       
-    </li>
 }*@
+<style type="text/css">
+    body {
+        background-color: sandybrown;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="header">s
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="~/images/bestchoice-logo.png" width="300px" />
+                </div>
+                <nav>
+                    <ul class="MenuItems">
+                        <li>
+                            <a href="">Trang chủ |</a>
+                            <a href=""> Sản phẩm |</a>
+                            <a href="">Về chúng tôi |</a>
+                            <a href="">Liên hệ |</a>
+                            <a href="">Tài khoản</a>
+                        </li>
+                    </ul>
+                </nav>
+              
+                <img src="~/images/cart.png" alt="" width="35px" height="35px" />
+            </div>
+            <!--EndNavi-->
+            <!--banner-->
+            <div class="row">
+                <div class="col-2">
+                    <h1> Sử dụng chúng  <br>Nếu bạn chưa có !</h1>
+                    <p>
+                        Nếu là người dùng điện thoại thì những thứ sau đây sẽ không thể rời khỏi điện thoại của bạn.
+                        <br> Đây là tất cả những gì bạn cần, hãy sở hữu chúng !
+                    </p>
+                    <a href="" class="btn">Tìm hiểu thêm &#10132;</a>
+                </div>
+                <div class="col-2">
+                    <img src="~/images/banner-shop.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Header-->
+    <!-- Categories -->
+    <div class="small-container">
+        <div class="categories">
+            <div class="row">
+                <!-- Chia 3 cột cho 3 phần hình ảnh -->
+                <div class="col-3">
+                    <img src="~/images/sacduphong.jpeg">
+                </div>
+                <div class="col-3">
+                    <img src="~/images/oplung.jpg">
+                </div>
+
+                <div class="col-3">
+                    <img src="~/images/taighekhongday.jpeg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Categories -->
+    <!-- Product Display-->
+    <div class="small-container">
+        <h2 class="title">Sản phẩm HOT</h2>
+        <!-- Tiêu đề -->
+        <div class="row">
+            <!-- Tạo 1 cột sản phẩm -->
+            <div class="col-4">
+                <img src="/images/sacduphong.jpeg">
+                <h4>Sạc dự phòng</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+            <!--Sinh viên tự Code - - >-->
+            <div class="col-4">
+                <img src="/images/thenho.jpg">
+                <h4>Thẻ nhớ</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+            <!--Sinh viên tự Code - - >-->
+
+            <div class="col-4">
+                <img src="/images/oplung.jpg">
+                <h4>Ốp lưng </h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+            <!--Sinh viên tự Code-->
+            <div class="col-4">
+                <img src="/images/taighekhongday.jpeg">
+                <h4>Tai nghe không dây</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Product Display-->
+    <!--Brand New-->
+    <div class="small-container">
+        <h2 class="title">Thương Hiệu Mới</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="/images/capsacsamsung.jpeg">
+                <h4>Bộ cáp sạc Samsung</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+            <div class="col-4">
+                <img src="/images/tuichongnuoc.jpg">
+                <h4>Túi chống nước </h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+            <div class="col-4">
+                <img src="/images/gaychuphinh.jpg">
+                <h4>Gậy chụp hình</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+            <div class="col-4">
+                <img src="/images/giadodienthoai.jpg">
+                <h4>Giá đỡ điện thoại</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--EndBrand New-->
+    <!--PrBrand New-->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <!--Cot 1 hinh anh-->
+                <div class="col-2">
+                    <img src="~/images/exclusive Product.png" class="offer-img">
+                </div>
+                <!--COT 2-->
+                <div class="col-2">
+                    <p>CHỈ CÓ TẠI CHÚNG TÔI</p>
+                    <h1>Xiao Mi Smart Band 4</h1>
+                    <samll>
+                        -> Màn hình cảm ứng màu AMOLED với độ sáng tốt hơn và màn hình dễ nhìn hơn 40%.
+                        <hr color="#8a8a8a">
+                        -> Xem các cuộc gọi, tin nhắn và thông báo của bạn.
+                        <hr color="#8a8a8a">
+                        ->Theo dõi hoạt động thể chất (bao gồm cả bơi lội) vì chống nước lên đến 50 m.
+                        <hr color="#8a8a8a">
+                        ->Cải thiện trong việc đo lường các số liệu.
+                    </samll>
+                    <div class=" button">
+                        <a href="#" onlick="buyNow(); return false;" class="btn">Buy Now &#10132;</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End PR Banner -->
+    <!-- Feedback -->
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i> <!-- Icon Quote -->
+                    <p>
+                        <!-- Nhận xét -->
+                        Thật tuyệt vời khi biết đến shop sớm hơn !
+                    </p>
+                    <div class="rating">
+                        <!-- Đánh giá sao -->
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <img src="~/images/user-2.png">
+                    <h3>Anh Phan</h3> <!-- Tên khách hàng -->
+                </div>
+                <!-- Sinh viên từ code -->
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i> <!-- Icon Quote -->
+                    <p>
+                        <!-- Nhận xét -->
+                        Chúng tôi rất yêu thích thương hiệu và sản phẩm của bạn !
+                    </p>
+                    <div class="rating">
+                        <!-- Đánh giá sao -->
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <img src="~/images/user-3.png">
+                    <h3>Nguyễn Thúc Thùy Tiên</h3> <!-- Tên khách hàng -->
+                </div>
+                <!-- Sinh viên tự code -->
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i> <!-- Icon Quote -->
+                    <p>
+                        <!-- Nhận xét -->
+                        Giao hàng tận nơi nhanh chóng, nhiệt tình hỗ trợ !
+                    </p>
+                    <div class="rating">
+                        <!-- Đánh giá sao -->
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <img src="~/images/user-1.png">
+                    <h3>Vịt Kều Bìn Dưn</h3> <!-- Tên khách hàng -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Feedback -->
+    <!-- Brand Logo -->
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="~/images/logo-samsung.jpg">
+                </div>
+                <div class="col-5">
+                    <img src="~/images/logo-iphone.jpg">
+                </div>
+                <div class="col-5">
+                    <img src="~/images/logo-xiaomi.png">
+                </div>
+                <div class="col-5">
+                    <img src="~/images/logo-oppo.png">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Brand Logo-->
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3> Tải xuống ứng dụng</h3>
+                    <p> Để nhận sớm nhất những Ưu đãi từ chúng tôi.</p>
+                    <div class="app-logo">
+                        <p>Tải cho hệ điều hành android</p>
+                        <img src="~/images/play-store.png">
+                        <p> Tải cho hệ điều hành ios </p>
+                        <img src="~/images/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="~/images/logp-shop.png">
+                    <p>Trao niềm tin, Trao gửi chất lượng !</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Đường dẫn của chúng tôi</h3>
+                    <ul>
+                        <li>Mã giảm giá</li>
+                        <li>Bài viết đánh giá</li>
+                        <li>Về quyền lợi khách hàng</li>
+                        <li>Hỗ trợ hotline:ThanhNhon</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Theo dõi chúng tôi tại</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twiter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr> <!-- Tạo chân Footer -->
+            <p class="copyright">Copyright 2023 - Nguyen Thanh Nhon</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
