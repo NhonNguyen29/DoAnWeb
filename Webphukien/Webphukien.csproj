@@ -119,12 +119,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GiohangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WebPhuKienController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Giohang.cs" />
     <Compile Include="Models\User.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,43 +140,17 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\shop-homepage.css" />
-    <Content Include="Content\css\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="images\app-store.png" />
-    <Content Include="images\banner-shop.png" />
-    <Content Include="images\banner1.jpg" />
-    <Content Include="images\banner2.jpg" />
-    <Content Include="images\banner3.jpg" />
-    <Content Include="images\bestchoice-logo.png" />
-    <Content Include="images\capsacsamsung.jpeg" />
     <Content Include="images\capsacsamsung.jpg" />
-    <Content Include="images\cart.png" />
-    <Content Include="images\exclusive Product.png" />
+    <Content Include="images\cart.jpg" />
     <Content Include="images\gapchuphinh.jpg" />
-    <Content Include="images\gaychuphinh.jpg" />
-    <Content Include="images\giadodienthoai.jpg" />
-    <Content Include="images\logo-iphone.jpg" />
-    <Content Include="images\logo-one.png" />
-    <Content Include="images\logo-oppo.png" />
-    <Content Include="images\logo-paypal.png" />
-    <Content Include="images\logo-samsung.jpg" />
-    <Content Include="images\logo-xiaomi.png" />
-    <Content Include="images\logp-shop.png" />
-    <Content Include="images\menu.png" />
-    <Content Include="images\oplung.jpg" />
     <Content Include="images\OplungSamsung.jpg" />
-    <Content Include="images\play-store.png" />
-    <Content Include="images\sacduphong.jpeg" />
-    <Content Include="images\taighekhongday.jpeg" />
     <Content Include="images\tainghesamsung.jpg" />
     <Content Include="images\thenho.jpg" />
     <Content Include="images\tuichongnuoc.jpg" />
-    <Content Include="images\user-1.png" />
-    <Content Include="images\user-2.png" />
-    <Content Include="images\user-3.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Models\User.dbml">
@@ -224,6 +200,10 @@
     <Content Include="Views\WebPhuKien\SanPhamTheoPhuKien.cshtml" />
     <Content Include="Views\WebPhuKien\ChiTietSanPham.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
+    <Content Include="Views\Giohang\Giohang.cshtml" />
+    <Content Include="Views\Giohang\GiohangParital.cshtml" />
+    <Content Include="Views\Giohang\Dathang.cshtml" />
+    <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

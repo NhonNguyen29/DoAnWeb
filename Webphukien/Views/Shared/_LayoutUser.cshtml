@@ -60,17 +60,36 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("ShopPhuKien", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })s
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Về chúng tôi", "About", "Home")</li>
-                    <li>@Html.ActionLink("Liên hệ", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Đăng Ký", "DangKy", "User")</li>
 
+                    <li>
+                        @Html.ActionLink("TRANG CHỦ", "Index", "WebPhuKien")
+                    </li>
+                    <li>
+                        @Html.ActionLink("ĐĂNG KÝ", "Dangky", "User")
+                    </li>
+                    <li>
+                        @Html.ActionLink("ĐĂNG NHẬP", "Dangnhap", "User")
+                    </li>
+                    <li>
+                        @Html.Action("GiohangParital", "Giohang")
+                    </li>
+
+
+                    <li>
+                        <a href="#">Về chúng tôi</a>
+                    </li>
+                    <li>
+                        <a href="#">Hỗ trợ</a>
+                    </li>
                 </ul>
             </div>
+
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -97,13 +116,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="~/images/banner1.jpg" width="100" alt="">
+                                    <img class="slide-image" src="~/images/capsacsamsung.jpg" width="100" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="~/images/banner2.jpg" width="100" alt="">
+                                    <img class="slide-image" src="~/images/oplungsamsung.jpg" width="100" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="~/images/banner3.jpg" width="100" alt="">
+                                    <img class="slide-image" src="~/images/tainghesamsung.jpg" width="100" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
