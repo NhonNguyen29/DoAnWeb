@@ -53,8 +53,8 @@ namespace Webphukien.Controllers
 
         public ActionResult ChiTietSanPham(int id)
         {
-            var ctsp = from sp in db.SANPHAMs where sp.MaSP == id select sp;
-            return View(ctsp.Single());
+            var sanpham = from sp in db.SANPHAMs where sp.MaSP == id select sp;
+            return View(sanpham.Single());
         }
     }
 }
