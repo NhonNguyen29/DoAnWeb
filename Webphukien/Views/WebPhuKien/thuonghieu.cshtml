@@ -3,10 +3,27 @@
 <div class="list-group">
     @foreach (var item in Model)
     {
-        <a href="@Url.Action("Thuonghieu","WebPhuKien", new {id=item.MaTH})" class="list-group-item">
+        <a href="@Url.Action("SanPhamThuongHieu","WebPhuKien", new {id=item.MaTH})" class="list-group-item">
             @item.TenTH
         </a>
 
     }
 </div>
+@*<div>
+    <div style="width:60%; float:left; border-left:dotted 1px; border-color:azure">
+        <img src="~/images/@Model.Anhbia" width="50%" />
+    </div>
+    <div style="width:60%; float:left; padding:10px">
+        <h4 style="font-weight:bold; color:red"> Tên Sản Phẩm: @Model.TenSP </h4>
+        <p style="text-align:justify"><span style="font-weight:bold">Mô Tả: </span> @Model.Mota</p>
+        <p style="font-weight:bold">Giá: <span style="color:red;font-size:16pt"> @Model.Giaban VNĐ</span></p>
+    </div>
+    <div>
+        <div id="Datmua">
+            <a href="@Url.Action("ThemGiohang", "Giohang", new {id =@Model.MaSP,@strURL=Request.Url.ToString() }) " class="list-group-item">
+                Đặt Mua
+            </a>
+        </div>
+    </div>
+</div>*@
 

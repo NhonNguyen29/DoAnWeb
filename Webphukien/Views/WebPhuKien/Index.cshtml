@@ -10,30 +10,57 @@
 
 <div class="row">
 </div>
-@foreach( var sapxeptheogia in  Model)
-{
-       
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <a href="@Url.Action("Chitietsanpham", "WebPhuKien", new { id = sapxeptheogia.MaSP})">
-                        <img alt="@sapxeptheogia.TenSP" src="~/images/@sapxeptheogia.Anhbia" width="200"/>
-                        <div>
-                            <br />
-                            <h4 style="text-align:center">
-                                @sapxeptheogia.TenSP
-                            </h4>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">15 Nhận xét</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                            </p>
-                        </div>
-                </div> 
-            </div>
-}
+@foreach( var sanpham in  Model)
+    {
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <a href="@Url.Action("Chitietsanpham", "WebPhuKien", new { id = sanpham.MaSP})">
+                            <img alt="@sanpham.TenSP" src="~/images/@sanpham.Anhbia" width="200"/>
+                            <div>
+                                <br />
+                                <h4 style="text-align:center">
+                                    @sanpham.TenSP
+                                </h4>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 Nhận xét</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+    }
+
+@*@foreach( var sapxeptheogia in  Model)
+    {
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <a href="@Url.Action("Chitietsanpham", "WebPhuKien", new { id = sapxeptheogia.MaSP})">
+                            <img alt="@sapxeptheogia.TenSP" src="~/images/@sapxeptheogia.Anhbia" width="200"/>
+                            <div>
+                                <br />
+                                <h4 style="text-align:center">
+                                    @sapxeptheogia.TenSP
+                                </h4>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 Nhận xét</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+    }*@
 

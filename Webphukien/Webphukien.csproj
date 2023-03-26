@@ -144,6 +144,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\banner1.jpg" />
+    <Content Include="images\banner2.jpg" />
+    <Content Include="images\banner3.jpg" />
     <Content Include="images\capsacsamsung.jpg" />
     <Content Include="images\cart.jpg" />
     <Content Include="images\gapchuphinh.jpg" />
