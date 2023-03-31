@@ -148,7 +148,7 @@ namespace Webphukien.Controllers
         {
 
             SANPHAM sp = db.SANPHAMs.SingleOrDefault(n => n.MaSP == id);
-            ViewBag.MaSP = sp.MaSP;
+           
             if (sp == null)
             {
                 Response.StatusCode = 404;
