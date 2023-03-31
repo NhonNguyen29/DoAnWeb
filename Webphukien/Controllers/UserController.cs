@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Web.UI;
 using Webphukien.Models;
+using static System.Security.Cryptography.MD5;
 
 namespace Webphukien.Controllers
 {
@@ -29,6 +32,8 @@ namespace Webphukien.Controllers
         {
             return View();
         }
+        
+    
         [HttpPost]
         public ActionResult DangKy(FormCollection cl, KHACHHANG kh)
         {
@@ -42,37 +47,41 @@ namespace Webphukien.Controllers
             var ngaysinh = String.Format("{0:MM/dd/yyyy}", cl["Ngaysinh"]);
             if(String.IsNullOrEmpty(hoten))
             {
-                ViewData["Loi_1"]= "Bạn chưa nhập họ tên";
+                ViewData["Loi_1"]= "Bạn chưa nhập họ tên ";
             }
             if (String.IsNullOrEmpty(taikhoan))
             {
-                ViewData["Loi_2"] = "Bạn chưa nhập tài khoản";
+                ViewData["Loi_2"] = "Bạn chưa nhập tài khoản ";
             }
             if (String.IsNullOrEmpty(matkhau))
             {
-                ViewData["Loi_3"] = "Bạn chưa nhập mật khẩu";
+                ViewData["Loi_3"] = "Bạn chưa nhập mật khẩu ";
             }
             if (String.IsNullOrEmpty(nhaplaimatkhau))
             {
-                ViewData["Loi_4"] = "Bạn chưa nhập lại mật khẩu";
+                ViewData["Loi_4"] = "Bạn chưa nhập lại mật khẩu ";
             }
             if (String.IsNullOrEmpty(dienthoai))
             {
-                ViewData["Loi_5"] = "Bạn chưa nhập số điện thoại";
+                ViewData["Loi_5"] = "Bạn chưa nhập số điện thoại ";
             }
             if (String.IsNullOrEmpty(email))
             {
-                ViewData["Loi_6"] = "Bạn chưa nhập email";
+                ViewData["Loi_6"] = "Bạn chưa nhập email ";
             }
             if (String.IsNullOrEmpty(diachi))
             {
-                ViewData["Loi_7"] = "Bạn chưa nhập địa chỉ";
+                ViewData["Loi_7"] = "Bạn chưa nhập địa chỉ ";
+            }
+            if (String.IsNullOrEmpty(ngaysinh))
+            {
+                ViewData["Loi_8"] = "Bạn chưa chọn ngày sinh ";
             }
             else
             {
                 kh.HoTen=hoten;
-                kh.Taikhoan=taikhoan;
-                kh.Matkhau=matkhau;
+                kh.Taikhoan=taikhoan;   
+                kh.Matkhau= matkhau;
                 kh.DienthoaiKH=dienthoai;
                 kh.Email=email;
                 kh.DiachiKH=diachi;
@@ -86,7 +95,7 @@ namespace Webphukien.Controllers
         }
         [HttpPost]
         public ActionResult Dangnhap(FormCollection cl)
-        {
+        { 
             var taikhoan = cl["Taikhoan"];
             var matkhau = cl["Matkhau"];
             if(String.IsNullOrEmpty(taikhoan))

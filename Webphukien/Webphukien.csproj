@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.5.0.3\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.5.0.3\build\Microsoft.TypeScript.MSBuild.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -49,6 +50,12 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -119,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GiohangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -139,7 +147,40 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\login-form-20\css\bootstrap.min.css" />
+    <Content Include="Content\login-form-20\css\bootstrap\mixins\_border-radius.css" />
+    <Content Include="Content\login-form-20\css\bootstrap\mixins\_reset-text.css" />
+    <Content Include="Content\login-form-20\css\bootstrap\mixins\_screen-reader.css" />
+    <Content Include="Content\login-form-20\css\bootstrap\mixins\_text-hide.css" />
+    <Content Include="Content\login-form-20\css\bootstrap\mixins\_visibility.css" />
+    <Content Include="Content\login-form-20\css\bootstrap\utilities\_stretched-link.css" />
+    <Content Include="Content\login-form-20\css\bootstrap\_media.css" />
+    <Content Include="Content\login-form-20\css\style.css" />
+    <Content Include="Content\login-form-20\images\bg.jpg" />
+    <Content Include="Content\login-form-20\index.html" />
+    <Content Include="Content\login-form-20\js\bootstrap.min.js" />
+    <Content Include="Content\login-form-20\js\jquery.min.js" />
+    <Content Include="Content\login-form-20\js\main.js" />
+    <Content Include="Content\login-form-20\js\popper.js" />
+    <Content Include="Content\login-form-20\main.html" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\shop-homepage.css" />
+    <Content Include="Content\__MACOSX\login-form-20\._index.html" />
+    <Content Include="Content\__MACOSX\login-form-20\._main.html" />
+    <Content Include="Content\__MACOSX\login-form-20\css\._bootstrap.min.css" />
+    <Content Include="Content\__MACOSX\login-form-20\css\._style.css" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\.__media.css" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\mixins\.__border-radius.css" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\mixins\.__reset-text.css" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\mixins\.__screen-reader.css" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\mixins\.__text-hide.css" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\mixins\.__visibility.css" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\utilities\.__stretched-link.css" />
+    <Content Include="Content\__MACOSX\login-form-20\images\._bg.jpg" />
+    <Content Include="Content\__MACOSX\login-form-20\js\._bootstrap.min.js" />
+    <Content Include="Content\__MACOSX\login-form-20\js\._jquery.min.js" />
+    <Content Include="Content\__MACOSX\login-form-20\js\._main.js" />
+    <Content Include="Content\__MACOSX\login-form-20\js\._popper.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -165,6 +206,217 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\login-form-20\.DS_Store" />
+    <Content Include="Content\login-form-20\css\.DS_Store" />
+    <Content Include="Content\login-form-20\css\bootstrap\.DS_Store" />
+    <Content Include="Content\login-form-20\css\bootstrap\mixins\.DS_Store" />
+    <Content Include="Content\login-form-20\fonts\.DS_Store" />
+    <Content Include="Content\login-form-20\images\.DS_Store" />
+    <Content Include="Content\login-form-20\js\.DS_Store" />
+    <Content Include="Content\login-form-20\scss\.DS_Store" />
+    <Content Include="Content\login-form-20\scss\bootstrap\.DS_Store" />
+    <Content Include="Content\login-form-20\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_overflow.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_stretched-link.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\vendor\_rfs.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_alert.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_badge.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_button-group.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_buttons.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_card.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_carousel.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_close.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_code.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_forms.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_functions.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_grid.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_images.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_input-group.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_list-group.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_media.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_mixins.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_modal.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_nav.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_navbar.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_pagination.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_popover.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_print.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_progress.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_reboot.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_root.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_spinners.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_tables.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_toasts.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_transitions.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_type.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_utilities.scss" />
+    <Content Include="Content\login-form-20\scss\bootstrap\_variables.scss" />
+    <Content Include="Content\login-form-20\scss\style.scss" />
+    <Content Include="Content\__MACOSX\._login-form-20" />
+    <Content Include="Content\__MACOSX\login-form-20\._.DS_Store" />
+    <Content Include="Content\__MACOSX\login-form-20\._css" />
+    <Content Include="Content\__MACOSX\login-form-20\._fonts" />
+    <Content Include="Content\__MACOSX\login-form-20\._images" />
+    <Content Include="Content\__MACOSX\login-form-20\._js" />
+    <Content Include="Content\__MACOSX\login-form-20\._scss" />
+    <Content Include="Content\__MACOSX\login-form-20\css\._.DS_Store" />
+    <Content Include="Content\__MACOSX\login-form-20\css\._bootstrap" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\._.DS_Store" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\._mixins" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\._utilities" />
+    <Content Include="Content\__MACOSX\login-form-20\css\bootstrap\mixins\._.DS_Store" />
+    <Content Include="Content\__MACOSX\login-form-20\fonts\._.DS_Store" />
+    <Content Include="Content\__MACOSX\login-form-20\images\._.DS_Store" />
+    <Content Include="Content\__MACOSX\login-form-20\js\._.DS_Store" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\._.DS_Store" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\._bootstrap" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\._style.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\._.DS_Store" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\._bootstrap-grid.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\._bootstrap-reboot.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\._bootstrap.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\._mixins" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\._utilities" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\._vendor" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__alert.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__badge.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__breadcrumb.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__button-group.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__buttons.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__card.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__carousel.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__close.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__code.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__custom-forms.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__dropdown.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__forms.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__functions.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__grid.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__images.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__input-group.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__jumbotron.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__list-group.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__media.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__mixins.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__modal.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__nav.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__navbar.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__pagination.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__popover.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__print.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__progress.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__reboot.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__root.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__spinners.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__tables.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__toasts.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__tooltip.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__transitions.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__type.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__utilities.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\.__variables.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__alert.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__background-variant.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__badge.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__border-radius.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__box-shadow.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__breakpoints.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__buttons.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__caret.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__clearfix.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__deprecate.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__float.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__forms.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__gradients.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__grid-framework.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__grid.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__hover.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__image.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__list-group.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__lists.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__nav-divider.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__pagination.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__reset-text.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__resize.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__screen-reader.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__size.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__table-row.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__text-emphasis.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__text-hide.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__text-truncate.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__transition.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\mixins\.__visibility.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__align.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__background.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__borders.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__clearfix.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__display.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__embed.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__flex.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__float.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__overflow.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__position.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__screenreaders.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__shadows.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__sizing.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__spacing.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__stretched-link.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__text.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__visibility.scss" />
+    <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\vendor\.__rfs.scss" />
     <None Include="Models\User.dbml.layout">
       <DependentUpon>User.dbml</DependentUpon>
     </None>
@@ -180,6 +432,66 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="tinymce\js\tinymce\icons\default\icons.min.js" />
+    <Content Include="tinymce\js\tinymce\license.txt" />
+    <Content Include="tinymce\js\tinymce\models\dom\model.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\js\emojiimages.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\js\emojiimages.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\js\emojis.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\quickbars\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="tinymce\js\tinymce\skins\content\dark\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\content\default\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\content\document\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\content\tinymce-5-dark\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\content\tinymce-5\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\content\writer\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\skin.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide-dark\skin.shadowdom.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\content.inline.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\skin.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\oxide\skin.shadowdom.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\content.inline.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\skin.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\content.inline.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\content.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\skin.min.css" />
+    <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\skin.shadowdom.min.css" />
+    <Content Include="tinymce\js\tinymce\themes\silver\theme.min.js" />
+    <Content Include="tinymce\js\tinymce\tinymce.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -207,6 +519,16 @@
     <Content Include="Views\Giohang\GiohangParital.cshtml" />
     <Content Include="Views\Giohang\Dathang.cshtml" />
     <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\SANPHAM.cshtml" />
+    <Content Include="Views\Admin\Themmoi.cshtml" />
+    <Content Include="tinymce\CHANGELOG.md" />
+    <Content Include="tinymce\js\tinymce\langs\README.md" />
+    <Content Include="Views\Admin\Chitiet.cshtml" />
+    <Content Include="Views\Admin\Xoa.cshtml" />
+    <Content Include="Views\Admin\Sua.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -222,6 +544,10 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="tinymce\js\tinymce\tinymce.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -256,7 +582,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.5.0.3\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.5.0.3\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.5.0.3\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.5.0.3\build\Microsoft.TypeScript.MSBuild.targets'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.5.0.3\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.5.0.3\build\Microsoft.TypeScript.MSBuild.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

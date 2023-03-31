@@ -7,6 +7,8 @@ using System.Web.Security;
 using System.Web.UI;
 using Webphukien.Models;
 
+using PagedList;
+using PagedList.Mvc;
 namespace Webphukien.Controllers
 {
     public class WebPhuKienController : Controller
@@ -19,11 +21,17 @@ namespace Webphukien.Controllers
             return db.SANPHAMs.OrderByDescending(gia => gia.Giaban).Take(count).ToList();
 
         }
-        public ActionResult Index()
+        public ActionResult Index(int ? page)
         {
-            /// lay 5 sp gia cao nhat
+
+            int pageSize = 6;
+            int pageNum = (page ?? 1);
+
+
+
+            ///// lay 5 sp gia cao nhat
             var giacaotoithap = laygiasanpham(5);
-            return View(giacaotoithap);
+            return View(giacaotoithap.ToPagedList(pageNum,pageSize));
         }
         public ActionResult cacloaiphukien()
         {

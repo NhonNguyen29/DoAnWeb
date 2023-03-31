@@ -3,7 +3,7 @@
     ViewBag.Title = "Dangnhap";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-<h4 style="color:red; text-align:center">@ViewBag.Thongbao</h4>
+<h4 style="color:red; text-align:center">  @ViewData["TK"]</h4>
 <table align="center">
         <h2 style="text-align:center">Đăng nhập tài khoản</h2>
         @using (Html.BeginForm())
