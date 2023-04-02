@@ -163,8 +163,10 @@ namespace Webphukien.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Sua(SANPHAM sp, HttpPostedFileBase fileupload)
+        public ActionResult Sua( HttpPostedFileBase fileupload, int id)
+
         {
+           
             ViewBag.MaTH = new SelectList(db.THUONGHIEUs.ToList().OrderBy(n => n.TenTH), "MaTH", "TenTH");
             ViewBag.MaLPK = new SelectList(db.LOAIPHUKIENs.ToList().OrderBy(n => n.TenPhuKien), "MaLPK", "TenPhuKien");
             if (fileupload == null)
@@ -186,6 +188,7 @@ namespace Webphukien.Controllers
                     {
                         fileupload.SaveAs(path);
                     }
+                    SANPHAM sp = db.SANPHAMs.SingleOrDefault(n => n.MaSP == id);
                     sp.Anhbia = filename;
                     UpdateModel(sp);
                     db.SubmitChanges();
@@ -193,6 +196,46 @@ namespace Webphukien.Controllers
                 return RedirectToAction("Sanpham");
             }
         }
+
+
+
+        ////
+        ///  [HttpGet]
+        //public ActionResult Edit(int id)
+        //{
+        //    if (Session["Taikhoanadmin"] == null)
+        //    {
+        //        ViewBag.ThongBao = "Bạn cần đăng nhập trước khi sử dụng chức năng chỉnh sửa!";
+        //        return RedirectToAction("Login", "Admin");
+        //    }
+        //    else
+        //    {
+        //        XE xe = data.XEs.SingleOrDefault(n => n.MaXe == id);
+        //        ViewBag.MaLoai = new SelectList(data.LOAIXEs.OrderBy(n => n.TenLoaiXe).ToList(), "MaLoai", "TenLoaiXe", xe.MaLoai);
+        //        ViewBag.MaNCC = new SelectList(data.NHACUNGCAPs.OrderBy(n => n.TenNCC).ToList(), "MaNCC", "TenNCC", xe.MaNCC);
+        //        ViewBag.MaMau = new SelectList(data.MAUXEs.OrderBy(n => n.TenMauXe).ToList(), "MaMau", "TenMauXe", xe.MaMau);
+        //        return View(xe);
+        //    }
+        //}
+
+        //[HttpPost, ActionName("Edit")]
+
+        //public ActionResult ConfirmEdit(int id)
+        //{
+        //    if (Session["Taikhoanadmin"] == null)
+        //    {
+        //        ViewBag.ThongBao = "Bạn cần đăng nhập trước khi sử dụng chức năng chỉnh sửa!";
+        //        return RedirectToAction("Login", "Admin");
+        //    }
+        //    else
+        //    {
+        //        XE xe = data.XEs.SingleOrDefault(n => n.MaXe == id);
+        //        UpdateModel(xe);
+        //        data.SubmitChanges();
+        //        return RedirectToAction("Xe", "QLXe");
+        //    }
+        //}
+
 
     }
 }
