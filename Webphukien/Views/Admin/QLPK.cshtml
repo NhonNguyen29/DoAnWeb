@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Webphukien.Models.LOAIPHUKIEN>
+
+@{
+    ViewBag.Title = "QLPK";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản lý phụ kiện</h2>
+
+<p>
+    @Html.ActionLink("Thêm loại phụ kiện", "ThemLPK")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên phụ kiện
+        </th>
+        <th>
+            Tên hãng
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenPhuKien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HANGDIENTHOAI.TenHDT)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "SuaLPK", new { id=item.MaLPK }) |
+            @Html.ActionLink("Xóa", "XoaLPK", new { id=item.MaLPK })
+        </td>
+    </tr>
+}
+
+</table>

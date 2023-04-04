@@ -1,0 +1,32 @@
+﻿@model Webphukien.Models.HANGDIENTHOAI
+
+@{
+    ViewBag.Title = "XoaHDT";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Sửa hãng điện thoại</h2>
+
+<h3>Bạn có chắc muốn xóa hãng điện thoại này chứ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên hãng: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHDT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trờ về", "QLHDT")
+        </div>
+    }
+</div>
