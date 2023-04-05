@@ -1,15 +1,658 @@
-﻿@*@model IEnumerable<Webphukien.Models.SANPHAM>
+﻿@model IEnumerable<Webphukien.Models.SANPHAM>
+@*@{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }*@
+@*<style type="text/css">
+        body {
+            background-color: sandybrown;
+        }
+    </style>*@
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}*@
-<style type="text/css">
-    body {
-        background-color: sandybrown;
-    }
-</style>
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Eflyer</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="~/Content/HomeIndex/css/bootstrap.min.css">
+
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="~/Content/HomeIndex/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="~/Content/HomeIndex/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="~/Content/HomeIndex/images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="~/Content/HomeIndex/css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  -->
+    <!-- owl stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/HomeIndex/css/owl.carousel.min.css">
+    <link rel="stylesoeet" href="~/Content/HomeIndex/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+</head>
+<body>
+    <!-- banner bg main start -->
+    <div class="banner_bg_main">
+        <!-- header top section start -->
+        <div class="container">
+            <div class="header_section_top">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="custom_menu">
+                            <ul>
+                                <li><a href="#">Trang chủ</a></li>
+                                <li><a href="#">Sản phẩm mới</a></li>
+                                <li><a href="#">Về chúng tôi</a></li>
+                                <li><a href="#">Liên hệ</a></li>
+                                <li><a href="#">Địa chỉ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header top section start -->
+        <!-- logo section start -->
+        <div class="logo_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="logo">
+                            <a href="index.html"><img src="~/images/bestchoice-lg-ngang.png" width="500px" style="border-radius:15px 50px"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- logo section end -->
+        <!-- header section start -->
+        <div class="header_section">
+            <div class="container">
+                <div class="containt_main">
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="col-md-12">
+                            @Html.Action("thuonghieu", "WebPhuKien")
+
+                            @Html.Action("cacloaiphukien", "WebPhuKien")
+                        </div>
+                        @*<a @Html.Action("thuonghieu", "WebPhuKien")></a>
+                        <a @Html.Action("cacloaiphukien", "WebPhuKien")></a>*@
+                    </div>
+                        <span class="toggle_icon" onclick="openNav()"><img src="~/Content/HomeIndex/images/toggle-icon.png"></span>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                All Category
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                        <div class="main">
+                            <!-- Another variation with a button -->
+                            <div class="input-group">
+                                Tìm sản phẩm: @Html.TextBox("TimTuKhoa", "", new { @class = "form-control" })
+                                <input type="submit" class="btn btn-default" type="button" style="background-color: #f26522; border-color:#f26522 " value="Tìm" />
+                            </div>
+                        </div>
+                        <div class="header_box">
+                            <div class="login_menu">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                            <span class="padding_10">Cart</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <span class="padding_10">Cart</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header section end -->
+            <!-- banner section start -->
+            <div class="banner_section layout_padding">
+                <div class="container">
+                    <div id="my_slider" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                                        <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                                        <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                                        <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- banner section end -->
+        </div>
+        <!-- banner bg main end -->
+        <!-- fashion section start -->
+        <div class="fashion_section">
+            <div id="main_slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <h1 class="fashion_taital">Man & Woman Fashion</h1>
+                            <div class="fashion_section_2">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Man T -shirt</h4>
+                                            <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                            <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Man -shirt</h4>
+                                            <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                            <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Woman Scart</h4>
+                                            <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                            <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container">
+                            <h1 class="fashion_taital">Man & Woman Fashion</h1>
+                            <div class="fashion_section_2">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Man T -shirt</h4>
+                                            <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                            <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Man -shirt</h4>
+                                            <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                            <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Woman Scart</h4>
+                                            <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                            <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container">
+                            <h1 class="fashion_taital">Man & Woman Fashion</h1>
+                            <div class="fashion_section_2">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Man T -shirt</h4>
+                                            <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                            <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Man -shirt</h4>
+                                            <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                            <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Woman Scart</h4>
+                                            <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                            <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- fashion section end -->
+        <!-- electronic section start -->
+        <div class="fashion_section">
+            <div id="electronic_main_slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <h1 class="fashion_taital">Electronic</h1>
+                            <div class="fashion_section_2">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Laptop</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="electronic_img"><img src="images/laptop-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Mobile</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="electronic_img"><img src="images/mobile-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Computers</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="electronic_img"><img src="images/computer-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container">
+                            <h1 class="fashion_taital">Electronic</h1>
+                            <div class="fashion_section_2">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Laptop</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="electronic_img"><img src="images/laptop-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Mobile</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="electronic_img"><img src="images/mobile-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Computers</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="electronic_img"><img src="images/computer-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container">
+                            <h1 class="fashion_taital">Electronic</h1>
+                            <div class="fashion_section_2">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Laptop</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="electronic_img"><img src="images/laptop-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Mobile</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="electronic_img"><img src="images/mobile-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Computers</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="electronic_img"><img src="images/computer-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#electronic_main_slider" role="button" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="carousel-control-next" href="#electronic_main_slider" role="button" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- electronic section end -->
+        <!-- jewellery  section start -->
+        <div class="jewellery_section">
+            <div id="jewellery_main_slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <h1 class="fashion_taital">Jewellery Accessories</h1>
+                            <div class="fashion_section_2">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Jumkas</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="jewellery_img"><img src="images/jhumka-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Necklaces</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="jewellery_img"><img src="images/neklesh-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Kangans</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="jewellery_img"><img src="images/kangan-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container">
+                            <h1 class="fashion_taital">Jewellery Accessories</h1>
+                            <div class="fashion_section_2">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Jumkas</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="jewellery_img"><img src="images/jhumka-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Necklaces</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="jewellery_img"><img src="images/neklesh-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Kangans</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="jewellery_img"><img src="images/kangan-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container">
+                            <h1 class="fashion_taital">Jewellery Accessories</h1>
+                            <div class="fashion_section_2">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Jumkas</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="jewellery_img"><img src="images/jhumka-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Necklaces</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="jewellery_img"><img src="images/neklesh-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-4">
+                                        <div class="box_main">
+                                            <h4 class="shirt_text">Kangans</h4>
+                                            <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
+                                            <div class="jewellery_img"><img src="images/kangan-img.png"></div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="carousel-control-next" href="#jewellery_main_slider" role="button" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                <div class="loader_main">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+        <!-- jewellery  section end -->
+        <!-- footer section start -->
+        <div class="footer_section layout_padding">
+            <div class="container">
+                <div class="footer_logo"><a href="index.html"><img src="images/footer-logo.png"></a></div>
+                <div class="input_bt">
+                    <input type="text" class="mail_bt" placeholder="Your Email" name="Your Email">
+                    <span class="subscribe_bt" id="basic-addon2"><a href="#">Subscribe</a></span>
+                </div>
+                <div class="footer_menu">
+                    <ul>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Gift Ideas</a></li>
+                        <li><a href="#">New Releases</a></li>
+                        <li><a href="#">Today's Deals</a></li>
+                        <li><a href="#">Customer Service</a></li>
+                    </ul>
+                </div>
+                <div class="location_main">Help Line  Number : <a href="#">+1 1800 1200 1200</a></div>
+            </div>
+            <hr> <!-- Tạo chân Footer -->
+            <p class="copyright">Copyright 2023 - Nguyen Thanh Nhon</p>
+        </div>
+
+
+        <!-- copyright section end
+        <!-- Javascript files
+            <script src="js/jquery.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.bundle.min.js"></script>
+            <script src="js/jquery-3.0.0.min.js"></script>
+            <script src="js/plugin.js"></script>
+            <!-- sidebar -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/custom.js"></script>
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "350px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
+</body>
+</html>
+
+
+
+
+
+<!--<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -20,7 +663,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="header">s
+    <div class="header">
+        s
         <div class="container">
             <div class="navbar">
                 <div class="logo">
@@ -37,309 +681,313 @@
                         </li>
                     </ul>
                 </nav>
-              
+
                 <img src="~/images/cart.png" alt="" width="35px" height="35px" />
+            </div>-->
+<!--EndNavi-->
+<!--banner-->
+<!--<div class="row">
+            <div class="col-2">
+                <h1> Sử dụng chúng  <br>Nếu bạn chưa có !</h1>
+                <p>
+                    Nếu là người dùng điện thoại thì những thứ sau đây sẽ không thể rời khỏi điện thoại của bạn.
+                    <br> Đây là tất cả những gì bạn cần, hãy sở hữu chúng !
+                </p>
+                <a href="" class="btn">Tìm hiểu thêm &#10132;</a>
             </div>
-            <!--EndNavi-->
-            <!--banner-->
-            <div class="row">
-                <div class="col-2">
-                    <h1> Sử dụng chúng  <br>Nếu bạn chưa có !</h1>
-                    <p>
-                        Nếu là người dùng điện thoại thì những thứ sau đây sẽ không thể rời khỏi điện thoại của bạn.
-                        <br> Đây là tất cả những gì bạn cần, hãy sở hữu chúng !
-                    </p>
-                    <a href="" class="btn">Tìm hiểu thêm &#10132;</a>
-                </div>
-                <div class="col-2">
-                    <img src="~/images/banner-shop.png" />
-                </div>
+            <div class="col-2">
+                <img src="~/images/banner-shop.png" />
             </div>
         </div>
     </div>
-    <!--End Header-->
-    <!-- Categories -->
+</div>-->
+<!--End Header-->
+<!-- Categories -->
+<!--<div class="small-container">
+    <div class="categories">
+        <div class="row">-->
+<!-- Chia 3 cột cho 3 phần hình ảnh -->
+<!--<div class="col-3">
+                <img src="~/images/sacduphong.jpeg">
+            </div>
+            <div class="col-3">
+                <img src="~/images/oplung.jpg">
+            </div>
+
+            <div class="col-3">
+                <img src="~/images/taighekhongday.jpeg">
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- End Categories -->
+<!-- Product Display-->
+<!--<div class="small-container">
+    <h2 class="title">Sản phẩm HOT</h2>-->
+<!-- Tiêu đề -->
+<!--<div class="row">-->
+<!-- Tạo 1 cột sản phẩm -->
+<!--<div class="col-4">
+    <img src="/images/sacduphong.jpeg">
+    <h4>Sạc dự phòng</h4>
+    <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+    </div>
+</div>-->
+<!--Sinh viên tự Code - - >-->
+<!--<div class="col-4">
+    <img src="/images/thenho.jpg">
+    <h4>Thẻ nhớ</h4>
+    <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+    </div>
+</div>-->
+<!--Sinh viên tự Code - - >-->
+<!--<div class="col-4">
+    <img src="/images/oplung.jpg">
+    <h4>Ốp lưng </h4>
+    <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+    </div>
+</div>-->
+<!--Sinh viên tự Code-->
+<!--<div class="col-4">
+            <img src="/images/taighekhongday.jpeg">
+            <h4>Tai nghe không dây</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- End Product Display-->
+<!--Brand New-->
+<!--<div class="small-container">
+    <h2 class="title">Thương Hiệu Mới</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="/images/capsacsamsung.jpeg">
+            <h4>Bộ cáp sạc Samsung</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="/images/tuichongnuoc.jpg">
+            <h4>Túi chống nước </h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="/images/gaychuphinh.jpg">
+            <h4>Gậy chụp hình</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="/images/giadodienthoai.jpg">
+            <h4>Giá đỡ điện thoại</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--EndBrand New-->
+<!--PrBrand New-->
+<!--<div class="offer">
     <div class="small-container">
-        <div class="categories">
-            <div class="row">
-                <!-- Chia 3 cột cho 3 phần hình ảnh -->
-                <div class="col-3">
-                    <img src="~/images/sacduphong.jpeg">
-                </div>
-                <div class="col-3">
-                    <img src="~/images/oplung.jpg">
+        <div class="row">-->
+<!--Cot 1 hinh anh-->
+<!--<div class="col-2">
+    <img src="~/images/exclusive Product.png" class="offer-img">
+</div>-->
+<!--COT 2-->
+<!--<div class="col-2">
+                <p>CHỈ CÓ TẠI CHÚNG TÔI</p>
+                <h1>Xiao Mi Smart Band 4</h1>
+                <samll>
+                    -> Màn hình cảm ứng màu AMOLED với độ sáng tốt hơn và màn hình dễ nhìn hơn 40%.
+                    <hr color="#8a8a8a">
+                    -> Xem các cuộc gọi, tin nhắn và thông báo của bạn.
+                    <hr color="#8a8a8a">
+                    ->Theo dõi hoạt động thể chất (bao gồm cả bơi lội) vì chống nước lên đến 50 m.
+                    <hr color="#8a8a8a">
+                    ->Cải thiện trong việc đo lường các số liệu.
+                </samll>
+                <div class=" button">
+                    <a href="#" onlick="buyNow(); return false;" class="btn">Buy Now &#10132;</a>
                 </div>
 
-                <div class="col-3">
-                    <img src="~/images/taighekhongday.jpeg">
-                </div>
             </div>
         </div>
+
     </div>
-    <!-- End Categories -->
-    <!-- Product Display-->
+</div>-->
+<!-- End PR Banner -->
+<!-- Feedback -->
+<!--<div class="testimonial">
     <div class="small-container">
-        <h2 class="title">Sản phẩm HOT</h2>
-        <!-- Tiêu đề -->
         <div class="row">
-            <!-- Tạo 1 cột sản phẩm -->
-            <div class="col-4">
-                <img src="/images/sacduphong.jpeg">
-                <h4>Sạc dự phòng</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-            </div>
-            <!--Sinh viên tự Code - - >-->
-            <div class="col-4">
-                <img src="/images/thenho.jpg">
-                <h4>Thẻ nhớ</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-            </div>
-            <!--Sinh viên tự Code - - >-->
-
-            <div class="col-4">
-                <img src="/images/oplung.jpg">
-                <h4>Ốp lưng </h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-            </div>
-            <!--Sinh viên tự Code-->
-            <div class="col-4">
-                <img src="/images/taighekhongday.jpeg">
-                <h4>Tai nghe không dây</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>-->
+ <!-- Icon Quote -->
+<!--<p>-->
+<!-- Nhận xét -->
+<!--Thật tuyệt vời khi biết đến shop sớm hơn !
+</p>
+<div class="rating">-->
+<!-- Đánh giá sao -->
+<!--<i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<img src="~/images/user-2.png">
+<h3>Anh Phan</h3>-->
+ <!-- Tên khách hàng -->
+<!--</div>-->
+<!-- Sinh viên từ code -->
+<!--<div class="col-3">
+    <i class="fa fa-quote-left"></i>-->
+ <!-- Icon Quote -->
+<!--<p>-->
+<!-- Nhận xét -->
+<!--Chúng tôi rất yêu thích thương hiệu và sản phẩm của bạn !
+</p>
+<div class="rating">-->
+<!-- Đánh giá sao -->
+<!--<i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<img src="~/images/user-3.png">
+<h3>Nguyễn Thúc Thùy Tiên</h3>-->
+ <!-- Tên khách hàng -->
+<!--</div>-->
+<!-- Sinh viên tự code -->
+<!--<div class="col-3">
+    <i class="fa fa-quote-left"></i>-->
+ <!-- Icon Quote -->
+<!--<p>-->
+<!-- Nhận xét -->
+<!--Giao hàng tận nơi nhanh chóng, nhiệt tình hỗ trợ !
+</p>
+<div class="rating">-->
+<!-- Đánh giá sao -->
+<!--<i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</div>
+<img src="~/images/user-1.png">
+<h3>Vịt Kều Bìn Dưn</h3>-->
+ <!-- Tên khách hàng -->
+<!--</div>
         </div>
     </div>
-    <!-- End Product Display-->
-    <!--Brand New-->
+</div>-->
+<!-- End Feedback -->
+<!-- Brand Logo -->
+<!--<div class="brands">
     <div class="small-container">
-        <h2 class="title">Thương Hiệu Mới</h2>
         <div class="row">
-            <div class="col-4">
-                <img src="/images/capsacsamsung.jpeg">
-                <h4>Bộ cáp sạc Samsung</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
+            <div class="col-5">
+                <img src="~/images/logo-samsung.jpg">
             </div>
-            <div class="col-4">
-                <img src="/images/tuichongnuoc.jpg">
-                <h4>Túi chống nước </h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
+            <div class="col-5">
+                <img src="~/images/logo-iphone.jpg">
             </div>
-            <div class="col-4">
-                <img src="/images/gaychuphinh.jpg">
-                <h4>Gậy chụp hình</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
+            <div class="col-5">
+                <img src="~/images/logo-xiaomi.png">
             </div>
-            <div class="col-4">
-                <img src="/images/giadodienthoai.jpg">
-                <h4>Giá đỡ điện thoại</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--EndBrand New-->
-    <!--PrBrand New-->
-    <div class="offer">
-        <div class="small-container">
-            <div class="row">
-                <!--Cot 1 hinh anh-->
-                <div class="col-2">
-                    <img src="~/images/exclusive Product.png" class="offer-img">
-                </div>
-                <!--COT 2-->
-                <div class="col-2">
-                    <p>CHỈ CÓ TẠI CHÚNG TÔI</p>
-                    <h1>Xiao Mi Smart Band 4</h1>
-                    <samll>
-                        -> Màn hình cảm ứng màu AMOLED với độ sáng tốt hơn và màn hình dễ nhìn hơn 40%.
-                        <hr color="#8a8a8a">
-                        -> Xem các cuộc gọi, tin nhắn và thông báo của bạn.
-                        <hr color="#8a8a8a">
-                        ->Theo dõi hoạt động thể chất (bao gồm cả bơi lội) vì chống nước lên đến 50 m.
-                        <hr color="#8a8a8a">
-                        ->Cải thiện trong việc đo lường các số liệu.
-                    </samll>
-                    <div class=" button">
-                        <a href="#" onlick="buyNow(); return false;" class="btn">Buy Now &#10132;</a>
-                    </div>
-
-                </div>
+            <div class="col-5">
+                <img src="~/images/logo-oppo.png">
             </div>
 
         </div>
     </div>
-    <!-- End PR Banner -->
-    <!-- Feedback -->
-    <div class="testimonial">
-        <div class="small-container">
-            <div class="row">
-                <div class="col-3">
-                    <i class="fa fa-quote-left"></i> <!-- Icon Quote -->
-                    <p>
-                        <!-- Nhận xét -->
-                        Thật tuyệt vời khi biết đến shop sớm hơn !
-                    </p>
-                    <div class="rating">
-                        <!-- Đánh giá sao -->
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <img src="~/images/user-2.png">
-                    <h3>Anh Phan</h3> <!-- Tên khách hàng -->
+</div>-->
+<!-- End Brand Logo-->
+<!-- Footer -->
+<!--<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3> Tải xuống ứng dụng</h3>
+                <p> Để nhận sớm nhất những Ưu đãi từ chúng tôi.</p>
+                <div class="app-logo">
+                    <p>Tải cho hệ điều hành android</p>
+                    <img src="~/images/play-store.png">
+                    <p> Tải cho hệ điều hành ios </p>
+                    <img src="~/images/app-store.png">
                 </div>
-                <!-- Sinh viên từ code -->
-                <div class="col-3">
-                    <i class="fa fa-quote-left"></i> <!-- Icon Quote -->
-                    <p>
-                        <!-- Nhận xét -->
-                        Chúng tôi rất yêu thích thương hiệu và sản phẩm của bạn !
-                    </p>
-                    <div class="rating">
-                        <!-- Đánh giá sao -->
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <img src="~/images/user-3.png">
-                    <h3>Nguyễn Thúc Thùy Tiên</h3> <!-- Tên khách hàng -->
-                </div>
-                <!-- Sinh viên tự code -->
-                <div class="col-3">
-                    <i class="fa fa-quote-left"></i> <!-- Icon Quote -->
-                    <p>
-                        <!-- Nhận xét -->
-                        Giao hàng tận nơi nhanh chóng, nhiệt tình hỗ trợ !
-                    </p>
-                    <div class="rating">
-                        <!-- Đánh giá sao -->
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <img src="~/images/user-1.png">
-                    <h3>Vịt Kều Bìn Dưn</h3> <!-- Tên khách hàng -->
-                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="~/images/logp-shop.png">
+                <p>Trao niềm tin, Trao gửi chất lượng !</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Đường dẫn của chúng tôi</h3>
+                <ul>
+                    <li>Mã giảm giá</li>
+                    <li>Bài viết đánh giá</li>
+                    <li>Về quyền lợi khách hàng</li>
+                    <li>Hỗ trợ hotline:ThanhNhon</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Theo dõi chúng tôi tại</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twiter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
             </div>
         </div>
-    </div>
-    <!-- End Feedback -->
-    <!-- Brand Logo -->
-    <div class="brands">
-        <div class="small-container">
-            <div class="row">
-                <div class="col-5">
-                    <img src="~/images/logo-samsung.jpg">
-                </div>
-                <div class="col-5">
-                    <img src="~/images/logo-iphone.jpg">
-                </div>
-                <div class="col-5">
-                    <img src="~/images/logo-xiaomi.png">
-                </div>
-                <div class="col-5">
-                    <img src="~/images/logo-oppo.png">
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- End Brand Logo-->
-    <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col-1">
-                    <h3> Tải xuống ứng dụng</h3>
-                    <p> Để nhận sớm nhất những Ưu đãi từ chúng tôi.</p>
-                    <div class="app-logo">
-                        <p>Tải cho hệ điều hành android</p>
-                        <img src="~/images/play-store.png">
-                        <p> Tải cho hệ điều hành ios </p>
-                        <img src="~/images/app-store.png">
-                    </div>
-                </div>
-                <div class="footer-col-2">
-                    <img src="~/images/logp-shop.png">
-                    <p>Trao niềm tin, Trao gửi chất lượng !</p>
-                </div>
-                <div class="footer-col-3">
-                    <h3>Đường dẫn của chúng tôi</h3>
-                    <ul>
-                        <li>Mã giảm giá</li>
-                        <li>Bài viết đánh giá</li>
-                        <li>Về quyền lợi khách hàng</li>
-                        <li>Hỗ trợ hotline:ThanhNhon</li>
-                    </ul>
-                </div>
-                <div class="footer-col-4">
-                    <h3>Theo dõi chúng tôi tại</h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twiter</li>
-                        <li>Instagram</li>
-                        <li>Youtube</li>
-                    </ul>
-                </div>
-            </div>
-            <hr> <!-- Tạo chân Footer -->
-            <p class="copyright">Copyright 2023 - Nguyen Thanh Nhon</p>
+        <hr>-->
+ <!-- Tạo chân Footer -->
+<!--<p class="copyright">Copyright 2023 - Nguyen Thanh Nhon</p>
         </div>
     </div>
 </body>
-</html>
-
-
+</html>-->

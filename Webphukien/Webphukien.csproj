@@ -129,6 +129,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GiohangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PhanQuyenController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WebPhuKienController.cs" />
     <Compile Include="Global.asax.cs">
@@ -147,6 +148,63 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\HomeIndex\css\animate.min.css" />
+    <Content Include="Content\HomeIndex\css\bootstrap-grid.css" />
+    <Content Include="Content\HomeIndex\css\bootstrap-grid.min.css" />
+    <Content Include="Content\HomeIndex\css\bootstrap-reboot.css" />
+    <Content Include="Content\HomeIndex\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\HomeIndex\css\bootstrap.css" />
+    <Content Include="Content\HomeIndex\css\bootstrap.min.css" />
+    <Content Include="Content\HomeIndex\css\default-skin.css" />
+    <Content Include="Content\HomeIndex\css\font-awesome.min.css" />
+    <Content Include="Content\HomeIndex\css\icomoon.css" />
+    <Content Include="Content\HomeIndex\css\jquery-ui.css" />
+    <Content Include="Content\HomeIndex\css\jquery.fancybox.min.css" />
+    <Content Include="Content\HomeIndex\css\jquery.mCustomScrollbar.min.css" />
+    <Content Include="Content\HomeIndex\css\meanmenu.css" />
+    <Content Include="Content\HomeIndex\css\nice-select.css" />
+    <Content Include="Content\HomeIndex\css\normalize.css" />
+    <Content Include="Content\HomeIndex\css\owl.carousel.min.css" />
+    <Content Include="Content\HomeIndex\css\responsive.css" />
+    <Content Include="Content\HomeIndex\css\slick.css" />
+    <Content Include="Content\HomeIndex\css\style.css" />
+    <Content Include="Content\HomeIndex\images\banner-bg.png" />
+    <Content Include="Content\HomeIndex\images\banner1.jpg" />
+    <Content Include="Content\HomeIndex\images\banner2.jpg" />
+    <Content Include="Content\HomeIndex\images\banner_blue.png" />
+    <Content Include="images\bestchoice-lg-ngang.png" />
+    <Content Include="Content\HomeIndex\images\call-icon.png" />
+    <Content Include="Content\HomeIndex\images\computer-img.png" />
+    <Content Include="Content\HomeIndex\images\dress-shirt-img.png" />
+    <Content Include="Content\HomeIndex\images\flag-france.png" />
+    <Content Include="Content\HomeIndex\images\flag-uk.png" />
+    <Content Include="Content\HomeIndex\images\footer-logo.png" />
+    <Content Include="Content\HomeIndex\images\jhumka-img.png" />
+    <Content Include="Content\HomeIndex\images\kangan-img.png" />
+    <Content Include="Content\HomeIndex\images\laptop-img.png" />
+    <Content Include="Content\HomeIndex\images\logo.png" />
+    <Content Include="Content\HomeIndex\images\mail-icon.png" />
+    <Content Include="Content\HomeIndex\images\map-icon.png" />
+    <Content Include="Content\HomeIndex\images\mobile-img.png" />
+    <Content Include="Content\HomeIndex\images\neklesh-img.png" />
+    <Content Include="Content\HomeIndex\images\search-icon.png" />
+    <Content Include="Content\HomeIndex\images\toggle-icon.png" />
+    <Content Include="Content\HomeIndex\images\tshirt-img.png" />
+    <Content Include="Content\HomeIndex\images\user-icon.png" />
+    <Content Include="Content\HomeIndex\images\women-clothes-img.png" />
+    <Content Include="Content\HomeIndex\js\bootstrap.bundle.js" />
+    <Content Include="Content\HomeIndex\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\HomeIndex\js\bootstrap.js" />
+    <Content Include="Content\HomeIndex\js\bootstrap.min.js" />
+    <Content Include="Content\HomeIndex\js\custom.js" />
+    <Content Include="Content\HomeIndex\js\jquery-3.0.0.min.js" />
+    <Content Include="Content\HomeIndex\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Content\HomeIndex\js\jquery.min.js" />
+    <Content Include="Content\HomeIndex\js\jquery.validate.js" />
+    <Content Include="Content\HomeIndex\js\modernizer.js" />
+    <Content Include="Content\HomeIndex\js\plugin.js" />
+    <Content Include="Content\HomeIndex\js\popper.min.js" />
+    <Content Include="Content\HomeIndex\js\slider-setting.js" />
     <Content Include="Content\login-form-20\css\bootstrap.min.css" />
     <Content Include="Content\login-form-20\css\bootstrap\mixins\_border-radius.css" />
     <Content Include="Content\login-form-20\css\bootstrap\mixins\_reset-text.css" />
@@ -188,6 +246,7 @@
     <Content Include="images\banner1.jpg" />
     <Content Include="images\banner2.jpg" />
     <Content Include="images\banner3.jpg" />
+    <Content Include="images\bestchoice-logo-home.png" />
     <Content Include="images\capsacsamsung.jpg" />
     <Content Include="images\cart.jpg" />
     <Content Include="images\gapchuphinh.jpg" />
@@ -417,6 +476,19 @@
     <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__text.scss" />
     <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\utilities\.__visibility.scss" />
     <Content Include="Content\__MACOSX\login-form-20\scss\bootstrap\vendor\.__rfs.scss" />
+    <Content Include="Content\HomeIndex\css\.DS_Store" />
+    <Content Include="Content\HomeIndex\css\bootstrap-grid.css.map" />
+    <Content Include="Content\HomeIndex\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\HomeIndex\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\HomeIndex\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\HomeIndex\css\bootstrap.css.map" />
+    <Content Include="Content\HomeIndex\css\bootstrap.min.css.map" />
+    <Content Include="Content\HomeIndex\fonts\Berlin Sans FB Bold.ttf" />
+    <Content Include="Content\HomeIndex\js\.DS_Store" />
+    <Content Include="Content\HomeIndex\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\HomeIndex\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\HomeIndex\js\bootstrap.js.map" />
+    <Content Include="Content\HomeIndex\js\bootstrap.min.js.map" />
     <None Include="Models\User.dbml.layout">
       <DependentUpon>User.dbml</DependentUpon>
     </None>
@@ -492,6 +564,7 @@
     <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\skin.shadowdom.min.css" />
     <Content Include="tinymce\js\tinymce\themes\silver\theme.min.js" />
     <Content Include="tinymce\js\tinymce\tinymce.min.js" />
+    <Content Include="Views\Home\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -549,6 +622,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\PhanQuyen\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />

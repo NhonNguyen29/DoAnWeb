@@ -64,8 +64,12 @@ namespace Webphukien.Controllers
         [HttpPost]
         public ActionResult Login (FormCollection cl)
         {
+            ////check trong db co admin k
+                DangkyDataContext db = new DangkyDataContext();
+          
             var tendn = cl["username"];
             var matkhau = cl["password"];
+           
             if (String.IsNullOrEmpty(tendn))
             {
                 ViewData["Loi1"] = "Phải nhập tên đăng nhập";
