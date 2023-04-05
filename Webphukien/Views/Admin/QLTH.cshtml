@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Webphukien.Models.THUONGHIEU>
+
+@{
+    ViewBag.Title = "QLTH";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Quản lý thương hiệu</h2>
+
+<p>
+    @Html.ActionLink("Thêm thương hiệu", "ThemTH")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Tên thương hiệu
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTH)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "SuaTH", new { id=item.MaTH }) |
+            @Html.ActionLink("Xóa", "XoaTH", new { id=item.MaTH })
+        </td>
+    </tr>
+}
+
+</table>

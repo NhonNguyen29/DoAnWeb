@@ -529,6 +529,23 @@
     <Content Include="Views\Admin\Chitiet.cshtml" />
     <Content Include="Views\Admin\Xoa.cshtml" />
     <Content Include="Views\Admin\Sua.cshtml" />
+    <Content Include="Views\Admin\QLHDT.cshtml" />
+    <Content Include="Views\Admin\ThemHDT.cshtml" />
+    <Content Include="Views\Admin\ThemLPK.cshtml" />
+    <Content Include="Views\Admin\QLPK.cshtml" />
+    <Content Include="Views\Admin\QLTH.cshtml" />
+    <Content Include="Views\Admin\ThemTH.cshtml" />
+    <Content Include="Views\Admin\QLDH.cshtml" />
+    <Content Include="Views\Admin\ThemDH.cshtml" />
+    <Content Include="Views\Admin\XoaHDT.cshtml" />
+    <Content Include="Views\Admin\ChitietDH.cshtml" />
+    <Content Include="Views\Admin\XoaLPK.cshtml" />
+    <Content Include="Views\Admin\XoaTH.cshtml" />
+    <Content Include="Views\Admin\SuaHDT.cshtml" />
+    <Content Include="Views\Admin\SuaLPK.cshtml" />
+    <Content Include="Views\Admin\SuaTH.cshtml" />
+    <Content Include="Views\Admin\XoaDH.cshtml" />
+    <Content Include="Views\Admin\SuaDH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

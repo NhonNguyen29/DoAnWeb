@@ -1,0 +1,33 @@
+﻿@model Webphukien.Models.THUONGHIEU
+
+@{
+    ViewBag.Title = "XoaTH";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xóa thương hiệu</h2>
+
+<h3>Bạn có muốn xóa thương hiệu này không?</h3>
+<div>
+ 
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên thương hiệu: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTH)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "QLTH")
+        </div>
+    }
+</div>
