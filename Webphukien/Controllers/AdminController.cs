@@ -18,20 +18,20 @@ namespace Webphukien.Controllers
     {
         // GET: Admin
         DangkyDataContext db = new DangkyDataContext();
-        
-  
+
+
         public ActionResult Index()
         {
             return View();
-        }   
-     
-        public ActionResult SANPHAM(int ?page)
+        }
+
+        public ActionResult SANPHAM(int? page)
         {
             int pageNumber = (page ?? 1);
             int pageSize = 6;
-            return View(db.SANPHAMs.ToList().OrderBy(n => n.MaSP).ToPagedList(pageNumber,pageSize));
+            return View(db.SANPHAMs.ToList().OrderBy(n => n.MaSP).ToPagedList(pageNumber, pageSize));
         }
-        public ActionResult QLHDT(int ? page)
+        public ActionResult QLHDT(int? page)
         {
             int pageNumber = (page ?? 1);
             int pageSize = 6;
@@ -60,9 +60,9 @@ namespace Webphukien.Controllers
         {
             return View();
         }
-        
+
         [HttpPost]
-        public ActionResult Login (FormCollection cl)
+        public ActionResult Login(FormCollection cl)
         {
             ////check trong db co admin k
                 DangkyDataContext db = new DangkyDataContext();
@@ -88,7 +88,7 @@ namespace Webphukien.Controllers
                     return RedirectToAction("Index", "Admin");
                 }
                 else
-                    ViewData["LoiTK"]= " Tên đăng nhập hoặc mật khẩu không đúng !";
+                    ViewData["LoiTK"] = " Tên đăng nhập hoặc mật khẩu không đúng !";
             }
             return View();
         }
@@ -153,14 +153,14 @@ namespace Webphukien.Controllers
             return View();
         }
 
-        
+
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult Themmoi(SANPHAM sp, HttpPostedFileBase fileupload)
         {
             ViewBag.MaTH = new SelectList(db.THUONGHIEUs.ToList().OrderBy(n => n.TenTH), "MaTH", "TenTH");
             ViewBag.MaLPK = new SelectList(db.LOAIPHUKIENs.ToList().OrderBy(n => n.TenPhuKien), "MaLPK", "TenPhuKien");
-            if(fileupload==null)
+            if (fileupload == null)
             {
                 ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
                 return View();
@@ -191,7 +191,7 @@ namespace Webphukien.Controllers
         {
             SANPHAM sp = db.SANPHAMs.SingleOrDefault(n => n.MaSP == id);
             ViewBag.MaSP = sp.MaSP;
-            if(sp == null)
+            if (sp == null)
             {
                 Response.StatusCode = 404;
                 return null;
@@ -263,7 +263,7 @@ namespace Webphukien.Controllers
         }
         public ActionResult XoaTH(int id)
         {
-           THUONGHIEU th = db.THUONGHIEUs.SingleOrDefault(n => n.MaTH == id);
+            THUONGHIEU th = db.THUONGHIEUs.SingleOrDefault(n => n.MaTH == id);
             ViewBag.MaTH = th.MaTH;
             if (th == null)
             {
@@ -317,7 +317,7 @@ namespace Webphukien.Controllers
 
         public ActionResult Xoa(int id)
         {
-            SANPHAM sp =db.SANPHAMs.SingleOrDefault(n => n.MaSP == id);
+            SANPHAM sp = db.SANPHAMs.SingleOrDefault(n => n.MaSP == id);
             ViewBag.MaSP = sp.MaSP;
             if (sp == null)
             {
@@ -326,7 +326,7 @@ namespace Webphukien.Controllers
             }
             return View(sp);
         }
-        [HttpPost,ActionName("Xoa")]
+        [HttpPost, ActionName("Xoa")]
         public ActionResult XacNhanXoaSP(int id)
         {
             SANPHAM sp = db.SANPHAMs.SingleOrDefault(n => n.MaSP == id);
@@ -346,7 +346,7 @@ namespace Webphukien.Controllers
         public ActionResult SuaHDT(int id)
         {
             HANGDIENTHOAI hdt = db.HANGDIENTHOAIs.SingleOrDefault(n => n.MaHDT == id);
-            if(hdt == null)
+            if (hdt == null)
             {
                 Response.StatusCode = 404;
                 return null;
@@ -435,7 +435,7 @@ namespace Webphukien.Controllers
         {
 
             SANPHAM sp = db.SANPHAMs.SingleOrDefault(n => n.MaSP == id);
-           
+
             if (sp == null)
             {
                 Response.StatusCode = 404;
@@ -450,10 +450,10 @@ namespace Webphukien.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Sua( HttpPostedFileBase fileupload, int id)
+        public ActionResult Sua(HttpPostedFileBase fileupload, int id)
 
         {
-           
+
             ViewBag.MaTH = new SelectList(db.THUONGHIEUs.ToList().OrderBy(n => n.TenTH), "MaTH", "TenTH");
             ViewBag.MaLPK = new SelectList(db.LOAIPHUKIENs.ToList().OrderBy(n => n.TenPhuKien), "MaLPK", "TenPhuKien");
             if (fileupload == null)
@@ -483,46 +483,5 @@ namespace Webphukien.Controllers
                 return RedirectToAction("Sanpham");
             }
         }
-
-
-
-        ////
-        ///  [HttpGet]
-        //public ActionResult Edit(int id)
-        //{
-        //    if (Session["Taikhoanadmin"] == null)
-        //    {
-        //        ViewBag.ThongBao = "Bạn cần đăng nhập trước khi sử dụng chức năng chỉnh sửa!";
-        //        return RedirectToAction("Login", "Admin");
-        //    }
-        //    else
-        //    {
-        //        XE xe = data.XEs.SingleOrDefault(n => n.MaXe == id);
-        //        ViewBag.MaLoai = new SelectList(data.LOAIXEs.OrderBy(n => n.TenLoaiXe).ToList(), "MaLoai", "TenLoaiXe", xe.MaLoai);
-        //        ViewBag.MaNCC = new SelectList(data.NHACUNGCAPs.OrderBy(n => n.TenNCC).ToList(), "MaNCC", "TenNCC", xe.MaNCC);
-        //        ViewBag.MaMau = new SelectList(data.MAUXEs.OrderBy(n => n.TenMauXe).ToList(), "MaMau", "TenMauXe", xe.MaMau);
-        //        return View(xe);
-        //    }
-        //}
-
-        //[HttpPost, ActionName("Edit")]
-
-        //public ActionResult ConfirmEdit(int id)
-        //{
-        //    if (Session["Taikhoanadmin"] == null)
-        //    {
-        //        ViewBag.ThongBao = "Bạn cần đăng nhập trước khi sử dụng chức năng chỉnh sửa!";
-        //        return RedirectToAction("Login", "Admin");
-        //    }
-        //    else
-        //    {
-        //        XE xe = data.XEs.SingleOrDefault(n => n.MaXe == id);
-        //        UpdateModel(xe);
-        //        data.SubmitChanges();
-        //        return RedirectToAction("Xe", "QLXe");
-        //    }
-        //}
-
-
     }
 }
