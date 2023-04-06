@@ -564,7 +564,6 @@
     <Content Include="tinymce\js\tinymce\skins\ui\tinymce-5\skin.shadowdom.min.css" />
     <Content Include="tinymce\js\tinymce\themes\silver\theme.min.js" />
     <Content Include="tinymce\js\tinymce\tinymce.min.js" />
-    <Content Include="Views\Home\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

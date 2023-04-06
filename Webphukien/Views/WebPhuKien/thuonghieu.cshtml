@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Webphukien.Models.THUONGHIEU>
 <p class="lead" style="color: ghostwhite"> Sản Phẩm </p>
-<div class="list-group" style="color: #003e8b">
+<div class="list-group" style="color: ghostwhite">
     @foreach (var item in Model)
     {
         <a href="@Url.Action("SanPhamThuongHieu","WebPhuKien", new {id=item.MaTH})" class="list-group-item">

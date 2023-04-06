@@ -1,14 +1,33 @@
 ﻿<style type="text/css">
     #Datmua a{
         clear:both; background-color:red;
-        color:white; width:120px; height:35px;
+        color:white; width:150px; height:35px;
         display:block; float:right; text-align:center;
-        padding-top:10px; text-decoration:none; font-weight:bold;
+        padding-top:0px; text-decoration:none; font-weight:bold;
     }
     #Datmua a:hover{
         background-color:limegreen;
         color:red;
     }
+
+    #Muonmua a {
+        clear: both;
+        background-color: red;
+        color: white;
+        width: 350px;
+        height: 35px;
+        display: block;
+        float: right;
+        text-align: center;
+        padding-top: 0px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        #Muonmua a:hover {
+            background-color: limegreen;
+            color: red;
+        }
 
 </style>
 @{
@@ -27,9 +46,23 @@
         <p style="font-weight:bold">Giá: <span style="color:red;font-size:16pt"> @Model.Giaban VNĐ</span></p>
     </div>
     <div>
+
+        @if (Session["Taikhoan"] == null)
+        {
+            <div id="Muonmua">
+                <a href="@Url.Action("Dangnhap", "User", new {id =@Model.MaSP,@strURL=Request.Url.ToString() }) " class="list-group-item">
+                    Đăng nhập để mua
+                </a>
+            </div>
+        }
+        else
+        {
         <div id="Datmua">
             <a href="@Url.Action("ThemGiohang", "Giohang", new {id =@Model.MaSP,@strURL=Request.Url.ToString() }) " class="list-group-item">
-                Đặt Mua </a>
+                Đặt Mua
+            </a>
         </div>
-    </div>
-</div>
+        }
+
+           
+        </div>

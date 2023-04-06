@@ -104,7 +104,7 @@ namespace Webphukien.Controllers
         {
             List<Giohang> lstGiohang = Laygiohang();
             Giohang sanpham = lstGiohang.SingleOrDefault(n => n.iMaSP == id);
-            if (sanpham != null)
+            if (sanpham != null  )
             {
                 sanpham.iSoluong = int.Parse(f["txtSoluong"].ToString());
             }
@@ -138,8 +138,8 @@ namespace Webphukien.Controllers
             List<Giohang> gh = Laygiohang();
             ddh.MaKH = kh.MaKH;
             ddh.Ngaydat = DateTime.Now;
-            var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["Ngaygiao"]);
-            ddh.Ngaygiao = DateTime.Parse(ngaygiao);
+            //var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["Ngaygiao"]);
+            //ddh.Ngaygiao = DateTime.Parse(ngaygiao);
             ddh.Tinhtranggiaohang = false;
             ddh.Dathanhtoan = false;
             db.DONDATHANGs.InsertOnSubmit(ddh);

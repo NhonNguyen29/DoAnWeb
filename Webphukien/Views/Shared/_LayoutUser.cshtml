@@ -29,7 +29,8 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">   
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -38,22 +39,12 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/Home/Index"> <img src="~/images/bestchoice-logo-home.png" width="185px" style="border-radius: 100px 100px"></a>
-            </div>    
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                    <li>
-                        @Html.ActionLink("TRANG CHỦ", "Index", "WebPhuKien")
-                    </li>
-                    <li>
-                        @Html.ActionLink("ĐĂNG KÝ", "Dangky", "User")
-                    </li>
-                    <li>
-                        @Html.ActionLink("ĐĂNG NHẬP", "Dangnhap", "User")
-                    </li>
-                    <li>
-                        @Html.Action("GiohangParital", "Giohang")
-                    </li>
+
 
 
                     <li>
@@ -62,6 +53,23 @@
                     <li>
                         <a href="#">Hỗ trợ</a>
                     </li>
+                    @if (Session["Taikhoan"] == null)
+                    {
+                        <li>
+                            @Html.ActionLink("Đăng Ký", "Dangky", "User")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Đăng Nhập", "Dangnhap", "User")
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            @Html.Action("GiohangParital", "Giohang")
+                        </li>
+                        <li>@Html.ActionLink("Đăng Xuất", "Dangxuat", "User")</li>
+                    }
+
                 </ul>
             </div>
 
