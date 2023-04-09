@@ -43,23 +43,33 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-
-                    <li>
-                        @Html.ActionLink("Sản Phẩm", "Sanpham", "Admin")
-                    </li>
-                    <li>
-                        @Html.ActionLink("Quản lý hãng điện thoại", "QLHDT", "Admin")
-                    </li>
-                    <li>
-                        @Html.ActionLink("Quản lý loại phụ kiện", "QLPK", "Admin")
-                    </li>
-                    <li>
-                        @Html.ActionLink("Quản lý thương hiệu", "QLTH", "Admin")
-                    </li>
-                    <li>
-                        @Html.ActionLink("Quản lý Đơn hàng", "QLDH", "Admin")
-                    </li>
-
+                    @if (Session["Taikhoanadmin"] != null)
+                    {
+                        <li>
+                            @Html.ActionLink("Sản Phẩm", "Sanpham", "Admin")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Quản lý hãng điện thoại", "QLHDT", "Admin")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Quản lý loại phụ kiện", "QLPK", "Admin")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Quản lý thương hiệu", "QLTH", "Admin")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Quản lý Đơn hàng", "QLDH", "Admin")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Đăng xuất", "Logout", "Admin")
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            @Html.ActionLink("Đăng nhập", "Login", "Admin")
+                        </li>
+                    }
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

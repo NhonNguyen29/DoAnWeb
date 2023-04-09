@@ -7,9 +7,7 @@
 
 <h2>Quản lý đơn hàng</h2>
 
-<p>
-    @Html.ActionLink("Thêm đơn hàng", "ThemDH")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -48,7 +46,6 @@
             @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
         </td>
         <td>
-            @Html.ActionLink("Sửa", "SuaDH", new { id=item.MaDonHang }) |
             @Html.ActionLink("Chi tiết", "ChitietDH", new { id=item.MaDonHang }) |
             @Html.ActionLink("Xóa", "XoaDH", new { id=item.MaDonHang })
         </td>

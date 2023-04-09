@@ -250,6 +250,7 @@
     <Content Include="images\capsacsamsung.jpg" />
     <Content Include="images\cart.jpg" />
     <Content Include="images\gapchuphinh.jpg" />
+    <Content Include="images\Iphone 14.jpg" />
     <Content Include="images\OplungSamsung.jpg" />
     <Content Include="images\tainghesamsung.jpg" />
     <Content Include="images\thenho.jpg" />
@@ -608,7 +609,6 @@
     <Content Include="Views\Admin\QLTH.cshtml" />
     <Content Include="Views\Admin\ThemTH.cshtml" />
     <Content Include="Views\Admin\QLDH.cshtml" />
-    <Content Include="Views\Admin\ThemDH.cshtml" />
     <Content Include="Views\Admin\XoaHDT.cshtml" />
     <Content Include="Views\Admin\ChitietDH.cshtml" />
     <Content Include="Views\Admin\XoaLPK.cshtml" />
@@ -617,7 +617,6 @@
     <Content Include="Views\Admin\SuaLPK.cshtml" />
     <Content Include="Views\Admin\SuaTH.cshtml" />
     <Content Include="Views\Admin\XoaDH.cshtml" />
-    <Content Include="Views\Admin\SuaDH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
