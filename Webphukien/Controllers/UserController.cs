@@ -113,7 +113,7 @@ namespace Webphukien.Controllers
                     {
                         ViewBag.Thongbao = "Đăng nhập thành công";
                         Session["Taikhoan"] = kh;
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "WebPhuKien");
                 }
                     else
                     
@@ -122,8 +122,14 @@ namespace Webphukien.Controllers
                 }
             return View();
         }
+        public ActionResult Dangxuat()
+        {
+            Session.Clear();
+            return RedirectToAction("Dangnhap");
+        }
 
-        
-             
+
+
+
     }
 }

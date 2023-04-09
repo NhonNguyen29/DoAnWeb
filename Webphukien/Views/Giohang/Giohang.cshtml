@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-<h2>Giohang</h2>
+
 <h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
 <table align="center" border="1">
     <tr style="text-align:center; font-weight:bold">
@@ -27,13 +27,16 @@
 
             @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { id = item.iMaSP }))
             {
-                <td><input type="number" min="1" value="@item.iSoluong" name="txtSoluong" style="background-color:silver; width:1" /> </td>
+                <td><input type="number" min="1" value="@item.iSoluong" name="txtSoluong" style="background-color:navy; width:1" /> </td>
 
                 <td>@String.Format("{0:0,0}", item.dGiaban) </td>
                 <td>@String.Format("{0:0,0}", item.dThanhtien) </td>
+
                 <td><a href="@Url.Action("ChiTietSanPham", "WebPhuKien", new { id = item.iMaSP })">  Chi tiết </td>
                 <td><a href="@Url.Action("Xoagiohang", "Giohang", new { id = item.iMaSP })">  Xóa </td>
-                <td> <input type="submit" value="Cập nhật" /> </td>
+                <td> <input type="submit" value="Cập nhật" style="color:#337ab7"; /> </td>
+                    
+               
             }
         </tr>
     }

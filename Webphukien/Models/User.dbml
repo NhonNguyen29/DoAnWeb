@@ -82,4 +82,34 @@
       <Column Name="HoVaTen" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Taikhoan" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Matkhau" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TenNhanVien" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SĐT" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idcapbacNV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NhanVien_PhanQuyen" Member="PhanQuyens" ThisKey="ID" OtherKey="idNhanVien" Type="PhanQuyen" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhanQuyen" Member="PhanQuyens">
+    <Type Name="PhanQuyen">
+      <Column Name="idNhanVien" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idChucNang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NhiemVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NhanVien_PhanQuyen" Member="NhanVien" ThisKey="idNhanVien" OtherKey="ID" Type="NhanVien" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="ChucNang_PhanQuyen" Member="ChucNang" ThisKey="idChucNang" OtherKey="ID" Type="ChucNang" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChucNang" Member="ChucNangs">
+    <Type Name="ChucNang">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenChucNang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaChucNang" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="ChucNang_PhanQuyen" Member="PhanQuyens" ThisKey="ID" OtherKey="idChucNang" Type="PhanQuyen" />
+    </Type>
+  </Table>
 </Database>

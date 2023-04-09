@@ -1089,7 +1089,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: white;
   background-color: #fff;
 }
 input,
@@ -1302,7 +1302,7 @@ p {
 }
 @media (min-width: 768px) {
   .lead {
-    font-size: 21px;
+    font-size: 30px;
   }
 }
 small,
@@ -4843,8 +4843,8 @@ a.badge:focus {
 }
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #337ab7;
-  background-color: #fff;
+    color: #337ab7;
+    background-color: #003e8b;
 }
 .list-group-item > .badge {
   float: right;
@@ -5139,12 +5139,12 @@ a.thumbnail.active {
   margin-bottom: 20px;
 }
 .list-group-item {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  margin-bottom: -1px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #003e8b;
+    border: 1px solid #ddd;
 }
 .list-group-item:first-child {
   border-top-left-radius: 4px;
@@ -5156,7 +5156,9 @@ a.thumbnail.active {
   border-bottom-left-radius: 4px;
 }
 a.list-group-item {
-  color: #555;
+    font-size:25px;
+    color: ghostwhite;
+    background: #003e8b;
 }
 a.list-group-item .list-group-item-heading {
   color: #333;
