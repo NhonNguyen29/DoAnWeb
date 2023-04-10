@@ -5064,12 +5064,13 @@ input[type="button"].btn-block {
 }
 
 .list-group {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    background-color: #191970;
 }
 
 .list-group-item-action {
