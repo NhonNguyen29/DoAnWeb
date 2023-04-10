@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Tìm kiếm</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <a href="@Url.Action("ChiTietSanPham", "WebPhuKien", new { id = item.MaSP })">
+                    <img alt="@item.TenSP" src="~/images/@item.Anhbia" height="300" width="300" />
+                </a>
+                <div>
+                    <h4 style="text-align:center">
+                        @item.TenSP 
+                    </h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="ratings">
+                <p class="pull-right">15 reviews</p>
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </p>
+            </div>
+        </div>
+
+    }
+</div>

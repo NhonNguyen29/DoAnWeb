@@ -251,7 +251,10 @@
     <Content Include="images\cart.jpg" />
     <Content Include="images\gapchuphinh.jpg" />
     <Content Include="images\Iphone 14.jpg" />
+    <Content Include="images\muiten.png" />
+    <Content Include="images\Oplungiphone.jpg" />
     <Content Include="images\OplungSamsung.jpg" />
+    <Content Include="images\sacAnker.jpg" />
     <Content Include="images\tainghesamsung.jpg" />
     <Content Include="images\thenho.jpg" />
     <Content Include="images\tuichongnuoc.jpg" />
@@ -617,6 +620,7 @@
     <Content Include="Views\Admin\SuaLPK.cshtml" />
     <Content Include="Views\Admin\SuaTH.cshtml" />
     <Content Include="Views\Admin\XoaDH.cshtml" />
+    <Content Include="Views\WebPhuKien\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

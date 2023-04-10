@@ -1,353 +1,354 @@
-@model IEnumerable<Webphukien.Models.SANPHAM>
-@*@{
-        ViewBag.Title = "Index";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }*@
-@*<style type="text/css">
-        body {
-            background-color: sandybrown;
-        }
-    </style>*@
+﻿
+@*@model IEnumerable<Webphukien.Models.SANPHAM>*@
 
+
+@model PagedList.PagedList<SANPHAM>
+@using Webphukien.Models
+@using PagedList.Mvc;
+
+<style type="text/css">
+    body {
+        background-color: orangered;
+    }
+</style>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <link href="~/Content/css/style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>BestChoice</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="~/Content/HomeIndex/css/bootstrap.min.css">
+
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="~/Content/HomeIndex/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="~/Content/HomeIndex/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="~/Content/HomeIndex/images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="~/Content/HomeIndex/css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  -->
+    <!-- owl stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/HomeIndex/css/owl.carousel.min.css">
+    <link rel="stylesoeet" href="~/Content/HomeIndex/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 </head>
 <body>
-    <div class="header">
-        s
+    <!-- banner bg main start -->
+    <div class="banner_bg_main">
+        <!-- header top section start -->
         <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <img src="~/images/bestchoice-logo.png" width="300px" />
+            <div class="header_section_top">
+                <div class="row">
+
                 </div>
-                <nav>
-                    <ul class="MenuItems">
-                        <li>
-                            <a href="">Trang chủ |</a>
-                            <a href=""> Sản phẩm |</a>
-                            <a href="">Về chúng tôi |</a>
-                            <a href="">Liên hệ |</a>
-                            <a href="">Tài khoản</a>
-                        </li>
-                    </ul>
-                </nav>
+            </div>
+        </div>
+        <!-- header top section start -->
+        <!-- logo section start -->
+        <div class="logo_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="logo">
 
-                <img src="~/images/cart.png" alt="" width="35px" height="35px" />
-            </div>-->
-<!--EndNavi-->
-<!--banner-->
-<!--<div class="row">
-            <div class="col-2">
-                <h1> Sử dụng chúng  <br>Nếu bạn chưa có !</h1>
-                <p>
-                    Nếu là người dùng điện thoại thì những thứ sau đây sẽ không thể rời khỏi điện thoại của bạn.
-                    <br> Đây là tất cả những gì bạn cần, hãy sở hữu chúng !
-                </p>
-                <a href="" class="btn">Tìm hiểu thêm &#10132;</a>
-            </div>
-            <div class="col-2">
-                <img src="~/images/banner-shop.png" />
-            </div>
-        </div>
-    </div>
-</div>-->
-<!--End Header-->
-<!-- Categories -->
-<!--<div class="small-container">
-    <div class="categories">
-        <div class="row">-->
-<!-- Chia 3 cột cho 3 phần hình ảnh -->
-<!--<div class="col-3">
-                <img src="~/images/sacduphong.jpeg">
-            </div>
-            <div class="col-3">
-                <img src="~/images/oplung.jpg">
-            </div>
-
-            <div class="col-3">
-                <img src="~/images/taighekhongday.jpeg">
-            </div>
-        </div>
-    </div>
-</div>-->
-<!-- End Categories -->
-<!-- Product Display-->
-<!--<div class="small-container">
-    <h2 class="title">Sản phẩm HOT</h2>-->
-<!-- Tiêu đề -->
-<!--<div class="row">-->
-<!-- Tạo 1 cột sản phẩm -->
-<!--<div class="col-4">
-    <img src="/images/sacduphong.jpeg">
-    <h4>Sạc dự phòng</h4>
-    <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-    </div>
-</div>-->
-<!--Sinh viên tự Code - - >-->
-<!--<div class="col-4">
-    <img src="/images/thenho.jpg">
-    <h4>Thẻ nhớ</h4>
-    <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-    </div>
-</div>-->
-<!--Sinh viên tự Code - - >-->
-<!--<div class="col-4">
-    <img src="/images/oplung.jpg">
-    <h4>Ốp lưng </h4>
-    <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-    </div>
-</div>-->
-<!--Sinh viên tự Code-->
-<!--<div class="col-4">
-            <img src="/images/taighekhongday.jpeg">
-            <h4>Tai nghe không dây</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-        </div>
-    </div>
-</div>-->
-<!-- End Product Display-->
-<!--Brand New-->
-<!--<div class="small-container">
-    <h2 class="title">Thương Hiệu Mới</h2>
-    <div class="row">
-        <div class="col-4">
-            <img src="/images/capsacsamsung.jpeg">
-            <h4>Bộ cáp sạc Samsung</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-        </div>
-        <div class="col-4">
-            <img src="/images/tuichongnuoc.jpg">
-            <h4>Túi chống nước </h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-        </div>
-        <div class="col-4">
-            <img src="/images/gaychuphinh.jpg">
-            <h4>Gậy chụp hình</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-        </div>
-        <div class="col-4">
-            <img src="/images/giadodienthoai.jpg">
-            <h4>Giá đỡ điện thoại</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-        </div>
-    </div>
-</div>-->
-<!--EndBrand New-->
-<!--PrBrand New-->
-<!--<div class="offer">
-    <div class="small-container">
-        <div class="row">-->
-<!--Cot 1 hinh anh-->
-<!--<div class="col-2">
-    <img src="~/images/exclusive Product.png" class="offer-img">
-</div>-->
-<!--COT 2-->
-<!--<div class="col-2">
-                <p>CHỈ CÓ TẠI CHÚNG TÔI</p>
-                <h1>Xiao Mi Smart Band 4</h1>
-                <samll>
-                    -> Màn hình cảm ứng màu AMOLED với độ sáng tốt hơn và màn hình dễ nhìn hơn 40%.
-                    <hr color="#8a8a8a">
-                    -> Xem các cuộc gọi, tin nhắn và thông báo của bạn.
-                    <hr color="#8a8a8a">
-                    ->Theo dõi hoạt động thể chất (bao gồm cả bơi lội) vì chống nước lên đến 50 m.
-                    <hr color="#8a8a8a">
-                    ->Cải thiện trong việc đo lường các số liệu.
-                </samll>
-                <div class=" button">
-                    <a href="#" onlick="buyNow(); return false;" class="btn">Buy Now &#10132;</a>
+                            <a href="/Home/Index"><img src="~/images/bestchoice-lg-ngang.png" width="500px" style="border-radius:15px 50px"></a>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
+        <!-- logo section end -->
+        <!-- header section start -->
+        <div class="header_section">
+            <div class="container">
+                <h1 style="color:ghostwhite"> Menu </h1>
+                <div class="containt_main">
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="col-md-12">
+                            @Html.Action("thuonghieu", "WebPhuKien")
 
-    </div>
-</div>-->
-<!-- End PR Banner -->
-<!-- Feedback -->
-<!--<div class="testimonial">
-    <div class="small-container">
-        <div class="row">
-            <div class="col-3">
-                <i class="fa fa-quote-left"></i>-->
- <!-- Icon Quote -->
-<!--<p>-->
-<!-- Nhận xét -->
-<!--Thật tuyệt vời khi biết đến shop sớm hơn !
-</p>
-<div class="rating">-->
-<!-- Đánh giá sao -->
-<!--<i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-</div>
-<img src="~/images/user-2.png">
-<h3>Anh Phan</h3>-->
- <!-- Tên khách hàng -->
-<!--</div>-->
-<!-- Sinh viên từ code -->
-<!--<div class="col-3">
-    <i class="fa fa-quote-left"></i>-->
- <!-- Icon Quote -->
-<!--<p>-->
-<!-- Nhận xét -->
-<!--Chúng tôi rất yêu thích thương hiệu và sản phẩm của bạn !
-</p>
-<div class="rating">-->
-<!-- Đánh giá sao -->
-<!--<i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-</div>
-<img src="~/images/user-3.png">
-<h3>Nguyễn Thúc Thùy Tiên</h3>-->
- <!-- Tên khách hàng -->
-<!--</div>-->
-<!-- Sinh viên tự code -->
-<!--<div class="col-3">
-    <i class="fa fa-quote-left"></i>-->
- <!-- Icon Quote -->
-<!--<p>-->
-<!-- Nhận xét -->
-<!--Giao hàng tận nơi nhanh chóng, nhiệt tình hỗ trợ !
-</p>
-<div class="rating">-->
-<!-- Đánh giá sao -->
-<!--<i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-    <i class="fa fa-star"></i>
-</div>
-<img src="~/images/user-1.png">
-<h3>Vịt Kều Bìn Dưn</h3>-->
- <!-- Tên khách hàng -->
-<!--</div>
-        </div>
-    </div>
-</div>-->
-<!-- End Feedback -->
-<!-- Brand Logo -->
-<!--<div class="brands">
-    <div class="small-container">
-        <div class="row">
-            <div class="col-5">
-                <img src="~/images/logo-samsung.jpg">
-            </div>
-            <div class="col-5">
-                <img src="~/images/logo-iphone.jpg">
-            </div>
-            <div class="col-5">
-                <img src="~/images/logo-xiaomi.png">
-            </div>
-            <div class="col-5">
-                <img src="~/images/logo-oppo.png">
-            </div>
+                            @Html.Action("cacloaiphukien", "WebPhuKien")
+                        </div>
+                        @*<a @Html.Action("thuonghieu", "WebPhuKien")></a>
+                            <a @Html.Action("cacloaiphukien", "WebPhuKien")></a>*@
+                    </div>
+                    <span class="toggle_icon" onclick="openNav()"><img src="~/Content/HomeIndex/images/toggle-icon.png"></span>
+                    <!--<div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        All Category
+                    </button>-->
+                    @*<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>*@
+                    <!--</div>-->
+                    <div class="main">
+                        <!-- Another variation with a button -->
+                        <div class="input-group" style="color: ghostwhite">
+                            @*Tìm sản phẩm: @Html.TextBox("TimTuKhoa", "", new { @class = "form-control" })
+                                <input type="submit" class="btn btn-default" type="button" style="background-color: #f26522; border-color:#f26522 " value="Tìm" />*@
 
+                            <!-- Add phần tìm kiếm vào trang chính -->
+
+
+
+                        </div>
+                    </div>
+                    <div class="header_box">
+                        <div class="login_menu">
+                            <ul>
+                                @if (Session["Taikhoan"] == null)
+                                {
+                                    <li>
+                                        @Html.ActionLink("Đăng Ký", "Dangky", "User")
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Đăng Nhập", "Dangnhap", "User")
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        @Html.Action("GiohangParital", "Giohang")
+                                    </li>
+                                    <li>@Html.ActionLink("Đăng Xuất", "Dangxuat", "User")</li>
+                                }
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- header section end -->
+        <!-- banner section start -->
+        <div class="banner_section layout_padding">
+            <div class="container">
+                <div id="my_slider" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row carousel-holder">
+
+                                <div class="col-md-12">
+                                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <img class="slide-image" src="~/images/banner1.jpg" width="1110px" style="height:250px" alt="">
+                                            </div>
+
+                                            <div class="item">
+                                                <img class="slide-image" src="~/images/banner3.jpg" width="1110px" style="height:250px" alt="">
+                                            </div>
+                                        </div>
+                                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </a>
+                                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- banner section end -->
     </div>
-</div>-->
-<!-- End Brand Logo-->
-<!-- Footer -->
-<!--<div class="footer">
+
     <div class="container">
+
         <div class="row">
-            <div class="footer-col-1">
-                <h3> Tải xuống ứng dụng</h3>
-                <p> Để nhận sớm nhất những Ưu đãi từ chúng tôi.</p>
-                <div class="app-logo">
-                    <p>Tải cho hệ điều hành android</p>
-                    <img src="~/images/play-store.png">
-                    <p> Tải cho hệ điều hành ios </p>
-                    <img src="~/images/app-store.png">
-                </div>
-            </div>
-            <div class="footer-col-2">
-                <img src="~/images/logp-shop.png">
-                <p>Trao niềm tin, Trao gửi chất lượng !</p>
-            </div>
-            <div class="footer-col-3">
-                <h3>Đường dẫn của chúng tôi</h3>
-                <ul>
-                    <li>Mã giảm giá</li>
-                    <li>Bài viết đánh giá</li>
-                    <li>Về quyền lợi khách hàng</li>
-                    <li>Hỗ trợ hotline:ThanhNhon</li>
-                </ul>
-            </div>
-            <div class="footer-col-4">
-                <h3>Theo dõi chúng tôi tại</h3>
-                <ul>
-                    <li>Facebook</li>
-                    <li>Twiter</li>
-                    <li>Instagram</li>
-                    <li>Youtube</li>
-                </ul>
+            <div class="col-12">
+                <h2 class="title">Video: Sản phẩm trong tuần</h2>
+                <iframe width="800" height="400" src="https://www.youtube.com/embed/LSdkb6FyeOA" title="Galaxy S23 Ultra: S Pen | Samsung" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
-        <hr>-->
- <!-- Tạo chân Footer -->
-<!--<p class="copyright">Copyright 2023 - Nguyen Thanh Nhon</p>
+
+    </div>
+
+  
+
+
+
+    <div class="container">
+        <h2 style="text-align: center; color: ghostwhite"> Sản phẩm giá cao tới thấp </h2>
+        <div class="row">
+            @foreach (var sppk in Model)
+            {
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <a href="@Url.Action("Chitietsanpham", "WebPhuKien", new { id = sppk.MaSP})">
+                            <img alt="@sppk.TenSP" src="~/images/@sppk.Anhbia" width="200" />
+                            <div>
+                                <br />
+                                <h4 style="text-align:center">
+                                    @sppk.TenSP
+                                </h4>
+                                <h4 style="text-align:center">
+                                    @sppk.Giaban vnđ
+                                </h4>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">15 Nhận xét</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
+    @* Tao liên kết các trang  *@
+    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+    <style>
+        .MenuTrang li {
+            display: inline;
+        }
+    </style>
+
+
+
+
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+
+    <div class="small-container">
+        <h2 class="title">  Trang Sản Phẩm</h2>
+
+        <a href="/WebPhuKien/Index"><img src="~/images/muiten.png" width="300px"  style="border-radius:15px 50px; text-align:center"></a>
+
+        <div class="row">
+
+        </div>
+    </div>
+
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "100159609722933");
+        chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v16.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!--EndBrand New-->
+    <!--PrBrand New-->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <!--Cot 1 hinh anh-->
+                <!--COT 2-->
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <hr>
+
+    <div class="footer_section layout_padding ">
+        <div class="footer" style="color:ghostwhite; font-size: 20px">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <h3> Địa chỉ chúng tôi: </h3>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d489.8026048131473!2d106.78517699323955!3d10.855561485495086!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2sThu%20Duc%20Campus%20Hutech%20khu%20E!5e0!3m2!1svi!2s!4v1681066825136!5m2!1svi!2s" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="footer-col-2">
+                        <img src="~/images/bestchoice-lg-ngang.png" width=200px" style="border-radius:15px 50px">
+                        <p>Trao niềm tin, Trao gửi chất lượng !</p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Đường dẫn của chúng tôi</h3>
+                        <ul>
+                            <strong>Email Hỗ Trợ:</strong>
+                            <a href="mailto:nhonnguyen2901@gmail.com">nhonnguyen2901@gmail.com</a>
+                            <li>Hotline: +84772107782</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Tạo chân Footer -->
+
+            </div>
+        </div>
+    </div>
+
 </body>
-</html>-->
-=======
-﻿
->>>>>>> 4f7a82b1ab5ea2fff5f54d97aab3d282e3162d2e
+</html>
+
+

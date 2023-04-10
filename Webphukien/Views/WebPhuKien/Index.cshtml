@@ -7,7 +7,7 @@
 }
 
 <h2>Chào mừng bạn đến với ShopPhuKien của chúng tôi !</h2>
-<h3 style="text-align:center; color:red"> Top Sản Phẩm</h3>
+<h3 style="text-align:center; color:red"> Sản Phẩm Giá Cao -> Thấp </h3>
 
 
 <div class="row">
@@ -20,8 +20,8 @@
                             <img alt="@sapxeptheogia.TenSP" src="~/images/@sapxeptheogia.Anhbia" width="200"/>
                             <div>
                                 <br />
-                                <h4 style="text-align:center">
-                                    @sapxeptheogia.TenSP
+                                <h4 style="text-align:center; color:orangered">
+                                    @sapxeptheogia.TenSP 
                                 </h4>
                             </div>
                             <div class="ratings">
@@ -37,6 +37,11 @@
                     </div>
                 </div>
     }
+
+
+
+
+
     Trang @(Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
     <div class="MenuTrang">
         @Html.PagedListPager(Model, page=>Url.Action("Index",new {page=page}))
@@ -44,5 +49,6 @@
     <style>
         .MenuTrang li {
             display: inline;
+           
         }
     </style>

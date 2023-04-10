@@ -4,17 +4,37 @@
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Hãy gọi chúng tôi nếu thật sự cần</h2>
 
 
-<address>
-    HUTECH<br />
-    Xa Lo Ha Noi<br />
-    <abbr title="Phone">Phone:</abbr>
-    077.210.77xx
-</address>
+<div class="footer_section layout_padding ">
+    <div class="footer" style="color:ghostwhite; font-size: 20px">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h1 style="text-align:center"> BestChoice Shop mong rằng có thể giúp đỡ được bạn ! </h1>
+                    <h3> Vị trí tại: </h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d489.8026048131473!2d106.78517699323955!3d10.855561485495086!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2sThu%20Duc%20Campus%20Hutech%20khu%20E!5e0!3m2!1svi!2s!4v1681066825136!5m2!1svi!2s" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="footer-col-2">
+                    <img src="~/images/bestchoice-lg-ngang.png" width=200px" style="border-radius:15px 50px">
+                    <p>Trao niềm tin, Trao gửi chất lượng !</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Hỗ Trợ</h3>
+                    <ul>
+                        <strong>Email Hỗ Trợ:</strong>
+                        <a href="mailto:nhonnguyen2901@gmail.com">nhonnguyen2901@gmail.com</a>
 
-<address>
-    <strong>Email Hỗ Trợ:</strong>   <a href="mailto:nhonnguyen2901@gmail.com">nhonnguyen2901@gmail.com</a><br />
-    <strong>Quảng cáo liên hệ:</strong> <a href="mailto:nhonnguyen2901@gmail.com">nhonnguyen2901@gmail.com</a>
-</address>
+                        <li>Hotline: +84772107782</li>
+                    </ul>
+                </div>
+                <hgroup>
+                    <h1> Quay lại trang chủ </h1>
+                    @Html.ActionLink("Trang chủ", "Index", "Home")
+                </hgroup>
+            </div>
+            <!-- Tạo chân Footer -->
+
+        </div>
+    </div>
+</div>

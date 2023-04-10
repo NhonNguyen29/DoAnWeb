@@ -5,28 +5,31 @@
 }
 <h4 style="color:red; text-align:center">  @ViewData["TK"] @ViewBag.ThongBao</h4>
 <table align="center">
-        <h2 style="text-align:center">Đăng nhập tài khoản</h2>
-        @using (Html.BeginForm())
-        {
-            @Html.ValidationSummary(true)
-            <tr style="height:40px">
-                <td>Tên Tài Khoản: </td>
-                <td>
-                    @Html.TextBox("Taikhoan")
-                    @ViewData["Loi_1"]
-                </td>
-            </tr>
-            <tr style="height:40px">
-                <td align="right">Mật Khẩu: </td>
-                <td>
-                    @Html.Password("Matkhau")
-                    @ViewData["Loi_2"]
-                </td>
-            </tr>
-            <tr style="height:40px">
-                <td></td>
-                <td><input type="submit" name="Đăng nhập"/></td>
-            </tr>
+    <h2 style="text-align:center">Đăng nhập tài khoản</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td style="padding:30px">Tên Tài Khoản:</td>
+            <td style="color:black">
+                @Html.TextBox("Taikhoan")
+                <span style="color:white">@ViewData["Loi_1"]</span>
+            </td>
+
+
+        </tr>
+        <tr style="height: 40px">
+            <td style="padding: 30px">Mật Khẩu: </td>
+            <td style="color:black">
+                @Html.Password("Matkhau")
+                <span style="color:white">@ViewData["Loi_2"]</span>
+            </td>
+
+        </tr>
+        <tr style="height:40px">
+            <td></td>
+            <td style="color:black"><input type="submit" name="Đăng nhập" /></td>
+        </tr>
     }
-    </table>
+</table>
 
